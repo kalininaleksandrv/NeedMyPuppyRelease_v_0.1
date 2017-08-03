@@ -1,0 +1,35 @@
+title немецкя овчарка
+description средняя по размеру служебная собака с уравновешенным, подвижным типом поведения, способная к разнообразной дрессировке
+image germshep
+link https://ru.m.wikipedia.org/wiki/Немецкая_овчарка
+
+title вельш корги
+description миниатюрная пастушья собака с веселым и дружелюбным харакером
+image velsh
+link https://ru.m.wikipedia.org/wiki/Вельш-корги
+
+title среднеазиатская овчарка
+description очень крупная охранная и пастушья собака с волевым характером
+image midasia
+link https://ru.m.wikipedia.org/wiki/Среднеазиатская_овчарка
+
+title шотландский терьер (скотч-терьер)
+description миниатюрная собака с решительным и настойчивым характером, компаньон или охотник
+image scotish_terrier
+link https://ru.m.wikipedia.org/wiki/Шотландский_терьер
+
+title такса
+description миниатюрная собака с энергичным, азартным характером, компаньон или охотник
+image dachshund
+link https://ru.m.wikipedia.org/wiki/Такса
+
+title сибирский хаски
+description средняя по размеру собака с энергичным, живым характером, независимая но очень дружелюбная к человеку
+image husky
+link https://ru.m.wikipedia.org/wiki/Сибирский_хаски
+
+title Лабрадор-ретривер
+description средняя по размеру служебная собака, подвижная, веселая и прекрано ладящая с людьми
+image labr
+link https://ru.m.wikipedia.org/wiki/Лабрадор-ретривер
+

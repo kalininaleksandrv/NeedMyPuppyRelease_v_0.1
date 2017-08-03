@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools= "http://schemas.android.com/tools"
+    tools:context="dev.eyesless.needmypuppy.MainActivity"
+    >
+
+
+
+    <item
+        android:id="@+id/action_email"
+        android:orderInCategory="100"
+        android:title="@string/action_email"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_delet"
+        android:icon="@drawable/ic_delete_white_24dp"
+        android:orderInCategory="2"
+        android:title="@string/action_garbage"
+        app:showAsAction="ifRoom"/>
+
+
+</menu>

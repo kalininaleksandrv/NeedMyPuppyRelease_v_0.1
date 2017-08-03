@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "403452917825",
+    "firebase_url": "https://needmypuppy.firebaseio.com",
+    "project_id": "needmypuppy",
+    "storage_bucket": "needmypuppy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403452917825:android:d34e3bd35b7448f7",
+        "android_client_info": {
+          "package_name": "dev.eyesless.needmypuppy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403452917825-1fncsecoff26hug49svmbls1a3cng2kj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.eyesless.needmypuppy",
+            "certificate_hash": "758dbee825efd73514514b70f21122e412bab3a3"
+          }
+        },
+        {
+          "client_id": "403452917825-clfa06pj0kgnpiu16crr3gvrfftrrhjp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8L6OosZ-fyFWV61-aH7APGA3K_Wn8gDc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403452917825-clfa06pj0kgnpiu16crr3gvrfftrrhjp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,50 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dev.eyesless.needmypuppy.ProgressBarFragment"
+    >
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.daimajia.numberprogressbar.NumberProgressBar
+                android:id="@+id/numberProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:progress_current="0"
+
+                custom:progress_max="100"
+                custom:progress_reached_bar_height="55dp"
+
+                custom:progress_reached_color="@color/colorPrimaryDark"
+                custom:progress_text_color="@color/colorPrimaryDark"
+                custom:progress_text_offset="2dp"
+                custom:progress_text_size="30sp"
+
+                custom:progress_text_visibility="visible"
+                custom:progress_unreached_bar_height="50dp"
+                custom:progress_unreached_color="@color/colorAccent"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintLeft_toLeftOf="parent"
+            custom:layout_constraintRight_toRightOf="parent"
+            custom:layout_constraintBottom_toTopOf="@+id/statusText"
+            custom:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status"
+            android:gravity="center"
+            custom:layout_constraintRight_toRightOf="parent"
+            custom:layout_constraintLeft_toLeftOf="parent"
+            custom:layout_constraintTop_toBottomOf="@+id/numberProgressBar"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintHorizontal_bias="0.504" />
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

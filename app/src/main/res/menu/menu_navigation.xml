@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_navigation_find"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:orderInCategory="1"
+        android:title="@string/find_breed"
+        />
+
+    <item
+        android:id="@+id/menu_navigation_param"
+        android:icon="@drawable/checkbox_marked_outline"
+        android:orderInCategory="1"
+        android:title="@string/params"
+        />
+
+    <item
+        android:id="@+id/menu_navigation_instruct"
+        android:icon="@drawable/ic_coin"
+        android:orderInCategory="1"
+        android:title="@string/instruct"
+        />
+
+    <item
+        android:id="@+id/menu_navigation_mail"
+        android:icon="@drawable/ic_mail_outline_black_24dp"
+        android:orderInCategory="1"
+        android:title="@string/mesage_to_devs"
+        />
+
+
+    <item
+        android:id="@+id/menu_navigation_about"
+        android:icon="@drawable/ic_info_outline_black_24dp"
+        android:orderInCategory="1"
+        android:title="@string/about"
+        />
+
+</menu>
