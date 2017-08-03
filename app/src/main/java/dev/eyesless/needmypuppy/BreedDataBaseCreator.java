@@ -53,8 +53,12 @@ public class BreedDataBaseCreator {
 
     public void databasecreator() {
 
-            newbreeddatabasehelper = new BreedDataBaseHelper(myContext);
-            mysecondbreeddatabase = newbreeddatabasehelper.getWritableDatabase();
+        newbreeddatabasehelper = new BreedFromAssetsDataBaseHelper(myContext);
+
+        if (newbreeddatabasehelper == null){newbreeddatabasehelper = new BreedDataBaseHelper(myContext);}
+
+
+        mysecondbreeddatabase = newbreeddatabasehelper.getWritableDatabase();
 
     }
 
