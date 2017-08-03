@@ -114,7 +114,7 @@ public class BreedDataBaseCreator {
 
     private String[] getRawAsq() {
 
-        String title = "husky";
+        String title = "%";
 
         int obidience_n = inact.obidience.getValue()-1;
         int guard_n = inact.guard.getValue()-1;
