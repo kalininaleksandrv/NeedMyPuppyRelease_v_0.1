@@ -12,22 +12,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageViewBuying"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:srcCompat="@drawable/for_what_image"
-        app:layout_constraintWidth_default="wrap"
-        app:layout_constraintHeight_default="wrap"
-        app:layout_constraintTop_toTopOf="parent"
-        android:adjustViewBounds="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
     <TextView
         android:id="@+id/title_buying"
         android:layout_width="wrap_content"
@@ -41,14 +25,32 @@
         android:layout_marginRight="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageViewBuying"
-         />
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imageViewBuying"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/for_what_image"
+        app:layout_constraintWidth_default="wrap"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintTop_toBottomOf="@+id/title_buying"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
 
     <TextView
-        android:id="@+id/description_buying"
+        android:id="@+id/description_buying_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/descrbuy"
+        android:text="@string/descrbuy_one"
         android:gravity="left"
         android:textSize="@dimen/text_size"
         android:layout_marginTop="8dp"
@@ -57,7 +59,37 @@
         android:layout_marginRight="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_buying" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBuying" />
+
+    <TextView
+        android:id="@+id/description_buying_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/descrbuy_two"
+        android:gravity="left"
+        android:textSize="@dimen/text_size"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_buying_one" />
+
+    <TextView
+        android:id="@+id/description_buying_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/descrbuy_three"
+        android:gravity="left"
+        android:textSize="@dimen/text_size"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_buying_two" />
 
     <TextView
         android:id="@+id/listoflinks_buying"
@@ -70,7 +102,7 @@
         android:layout_marginRight="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/description_buying" />
+        app:layout_constraintTop_toBottomOf="@+id/description_buying_three" />
 
 </android.support.constraint.ConstraintLayout>
 
