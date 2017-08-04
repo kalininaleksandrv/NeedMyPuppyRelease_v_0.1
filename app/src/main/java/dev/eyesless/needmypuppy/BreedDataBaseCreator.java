@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
@@ -28,6 +29,18 @@ public class BreedDataBaseCreator {
 
     }
 
+    public void databasecreator() {
+
+        newbreeddatabasehelper = new BreedFromAssetsDataBaseHelper(myContext);
+
+        if (newbreeddatabasehelper == null){newbreeddatabasehelper = new BreedDataBaseHelper(myContext);}
+
+        mysecondbreeddatabase = newbreeddatabasehelper.getWritableDatabase();
+
+        Log.i("MY_TAG", "DATABASE EXIST");
+
+    }
+
     public void onCreateDb (String[] s){
 
         String[] myAsq;
@@ -43,22 +56,14 @@ public class BreedDataBaseCreator {
 
             mysecondbreeddatabase.close();
 
+            Log.i("MY_TAG", "DATA SEND TO LIST");
+
+
         } catch (SQLiteException e) {
             Toast myToast = Toast.makeText(myContext, "RawCursor not working", Toast.LENGTH_SHORT);
             myToast.setGravity(Gravity.BOTTOM, 0, 30);
             myToast.show();
         }
-
-    }
-
-    public void databasecreator() {
-
-        newbreeddatabasehelper = new BreedFromAssetsDataBaseHelper(myContext);
-
-        if (newbreeddatabasehelper == null){newbreeddatabasehelper = new BreedDataBaseHelper(myContext);}
-
-
-        mysecondbreeddatabase = newbreeddatabasehelper.getWritableDatabase();
 
     }
 
@@ -112,6 +117,7 @@ public class BreedDataBaseCreator {
                 and + noalergy + like
                 , selectionArgs);
 
+        Log.i("MY_TAG", "CURSOR EXIST");
 
         return mCursor;
     }
@@ -155,7 +161,9 @@ public class BreedDataBaseCreator {
     private String getHair() {
 
         if (inact.hair.getValue() == 0) return "%"; else {
-            if (inact.hair.getValue() == 1) return "short"; else return "long";}
+            if (inact.hair.getValue() == 1)
+              {Log.i("MY_TAG", "SHORT"); return "short"; }
+                else {Log.i("MY_TAG", "LONG"); return "long";}}
     }
 
     private String getBlackorwhite() {
@@ -202,6 +210,8 @@ public class BreedDataBaseCreator {
          inact.setDataBaseCreated(true);
 
          cursor.close();
+
+        Log.i("MY_TAG", "LIST EXIST");
 
     }
 

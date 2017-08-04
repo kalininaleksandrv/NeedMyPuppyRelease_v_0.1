@@ -114,7 +114,7 @@ public class Fragment_search extends Fragment implements MVPInterface_search {
     private void iteminitier() {
 
         findimage = (ImageView) parentview.findViewById(R.id.imageViewSearch);
-        gonextbutton = (Button) parentview.findViewById(R.id.button_gonext);
+        gonextbutton = (Button) parentview.findViewById(R.id.button_gonext_search);
         findbutton = (ImageButton) parentview.findViewById(R.id.imageButton_find);
         incomtext = (TextView) parentview.findViewById(R.id.db_text_recived);
         outcomtext = (EditText) parentview.findViewById(R.id.db_editText_sended);

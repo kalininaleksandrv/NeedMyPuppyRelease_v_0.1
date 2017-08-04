@@ -154,6 +154,8 @@ public class InitiationActivity extends Application {
         buttonaboutownerispressed = false;
         buttonmorphoispressed = false;
 
+        setMyListOfBreed_m(null);
+
     }
 
     public boolean isButtonmorphoispressed() {

@@ -254,6 +254,16 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
                 else toastmaker(getString(R.string.no_breed_found));
 
                 break;
+
+            case R.id.button_gonext_search:
+
+                if (inact.getMyListOfBreed_m().size() != 0){
+
+                    frameRemoover(new Recycle_view_fragment(), "RecycleView");}
+
+                else toastmaker(getString(R.string.no_breed_found));
+
+                break;
         }
     }
 
@@ -448,13 +458,10 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
     //init database if it does not
     public void databaseinitiator(){
 
-        if (inact.isDataBaseCreated() == false) {
-
             BreedDataBaseCreator myDataCreator = new BreedDataBaseCreator(this, inact);
             myDataCreator.databasecreator();
             myDataCreator.onCreateDb(null);
             inact.setListOfTitles();
-        }
     }
 
 }
