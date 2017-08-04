@@ -137,11 +137,11 @@ public class InitiationActivity extends Application {
 
     public void bucketseraser () {
 
-        obidience.setValue(1);
-        guard.setValue(1);
+        obidience.setValue(0);
+        guard.setValue(0);
         agressive.setValue(5);
-        active.setValue(1);
-        hardy.setValue(1);
+        active.setValue(5);
+        hardy.setValue(0);
         size.setValue(5);
         care.setValue(5);
         hunt.setValue(0);

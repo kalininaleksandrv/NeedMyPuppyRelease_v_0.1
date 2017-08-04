@@ -117,7 +117,7 @@ public class BreedDataBaseCreator {
                 and + noalergy + like
                 , selectionArgs);
 
-        Log.i("MY_TAG", "CURSOR EXIST");
+        Log.i("MY_TAG", "CURSOR EXIST ");
 
         return mCursor;
     }
@@ -211,7 +211,7 @@ public class BreedDataBaseCreator {
 
          cursor.close();
 
-        Log.i("MY_TAG", "LIST EXIST");
+        Log.i("MY_TAG", "LIST EXIST " + myListOfBreed_m.size());
 
     }
 
