@@ -97,10 +97,10 @@ public class Fragment_description extends Fragment {
             if (titletext == null){titletext = myListOfBreed.get(myBreedId).getB_title();}
             myBreedTitle.setText(titletext);
 
-//            Display display = getActivity().getWindowManager().getDefaultDisplay();
-//            Point size = new Point();
-//            display.getSize(size);
-//            int width = size.x;
+            Display display = getActivity().getWindowManager().getDefaultDisplay();
+            Point size = new Point();
+            display.getSize(size);
+            int width = size.x;
 
             if (pictureweblinc == null) {pictureweblinc =  myListOfBreed.get(myBreedId).getB_weblinc();}
 
@@ -110,7 +110,7 @@ public class Fragment_description extends Fragment {
                     .load(pictureweblinc)
                     .placeholder(R.drawable.try_to_download)
                     .error(R.drawable.sad_dog)
-//                    .resize(width, width*(int)0.75)
+                    .resize(width, width*(int)0.75)
                     .into(myBreedImage);
 
             TextView myBreedDescript = (TextView) parentview.findViewById(R.id.breed_descript);
