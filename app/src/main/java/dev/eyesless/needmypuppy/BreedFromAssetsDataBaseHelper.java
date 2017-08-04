@@ -72,7 +72,6 @@ public class BreedFromAssetsDataBaseHelper extends SQLiteOpenHelper {
 
     private void copydatabase() throws IOException {
 
-        toastmaker();
         //Open your local db as the input stream
         InputStream myinput = mycontext.getAssets().open(DB_NAME);
 
@@ -126,12 +125,4 @@ public class BreedFromAssetsDataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-    // if button was pressed and trying next time, set toast about
-    public void toastmaker() {
-
-        final Toast myToast = Toast.makeText(mycontext, "Создаем базу данных пород (это потребуется всего 1 раз)", Toast.LENGTH_LONG);
-        myToast.setGravity(Gravity.CENTER, 0, 30);
-        myToast.show();
-
-    }
 }
