@@ -39,7 +39,7 @@ public class Presenter_aboutdog {
 
         inact.obidience.setValue(max(inact.obidience.getValue(), 3-minterface.iscynologist())); //чем лучше кинологические услуги тем хуже может быть послушание
 
-        inact.guard.setValue(max(inact.guard.getValue(), minterface.iscynologist())); //чем хуже развиты кинологические услуги, тем менее выраженные охранные качества допускаются
+ //       inact.guard.setValue(max(inact.guard.getValue(), minterface.iscynologist())); //чем хуже развиты кинологические услуги, тем менее выраженные охранные качества допускаются
 
         inact.agressive.setValue(min(inact.agressive.getValue(), minterface.iswalk()+2)); //чем хуже условия выгула, тем менее агрессивная собака допускается
         inact.agressive.setValue(min(inact.agressive.getValue(), minterface.iscynologist()+2)); // чем хуже развиты кинологические услуги, тем менее агрессивная собака допускается

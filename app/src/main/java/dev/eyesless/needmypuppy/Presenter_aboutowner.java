@@ -49,6 +49,8 @@ class Presenter_aboutowner {
 
         inact.care.setValue(min(inact.care.getValue(), min(minterface.istime()+1, minterface.isexp() +1))); //чем больше времени или экспертизы тем больше показатель специфического ухода
 
+        if (minterface.isage()<2 || minterface.isage() ==5){ inact.size.setValue(min(inact.size.getValue(), 3));} //возраст менее 16лет или более 60 лет, то уменьшить максимально допустимый размер до 3
+
     }
 
     //корректируем показатель активности от возраста или от менее активных членов семьи

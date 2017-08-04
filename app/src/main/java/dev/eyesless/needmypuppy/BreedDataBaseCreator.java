@@ -162,8 +162,8 @@ public class BreedDataBaseCreator {
 
         if (inact.hair.getValue() == 0) return "%"; else {
             if (inact.hair.getValue() == 1)
-              {Log.i("MY_TAG", "SHORT"); return "short"; }
-                else {Log.i("MY_TAG", "LONG"); return "long";}}
+              { return "short"; }
+                else { return "long";}}
     }
 
     private String getBlackorwhite() {

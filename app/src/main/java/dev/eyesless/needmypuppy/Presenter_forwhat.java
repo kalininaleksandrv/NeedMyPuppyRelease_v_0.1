@@ -41,7 +41,7 @@ class Presenter_forwhat {
 
             inact.obidience.setValue(max(inact.obidience.getValue(),2));
             inact.agressive.setValue(min(inact.agressive.getValue(),3));
-            inact.active.setValue(max(inact.active.getValue(),3));
+            inact.active.setValue(max(inact.active.getValue(),4));
             inact.hardy.setValue(max(inact.hardy.getValue(),4));
         }
 
