@@ -52,7 +52,7 @@
     <string name="params">Значения подбора</string>
     <string name="email_adress">eyesless.devtest@gmail.com</string>
     <string name="email_subj">О программе Я ВЫБИРАЮ ЩЕНКА</string>
-    <string name="project_adress">https://github.com/kalininaleksandrv/NeedMyPuppy</string>
+    <string name="project_adress">https://github.com/kalininaleksandrv/NeedMyPuppyRelease_v_0.1</string>
     <string name="about_app">Приложение Я ВЫБИРАЮ ЩЕНКА является некоммерческим проектом с открытым исходным кодом, цель которого повысить качество жизни собак и их хозяев за счет более осознанного подхода к выбору породы. Разработано Eyesless.dev. Приложение находится в стадии альфа-теста (текущая версия alpha 0.0.1). Приложение не может являтся основанием для принятия или не принятия каких-либо решений. Используя Приложение Вы соглашаетесь, что разработчики не несут никакой ответственности за любые обстоятельства прямо или косвенно последовавшие в результате использования Приложения.</string>
     <string name="linktogit">Посетить наш репозиторий на GitHub</string>
     <string name="nofunc">Этот функционал будет реализован в одной из следующих версий приложения</string>

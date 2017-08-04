@@ -3,6 +3,7 @@ package dev.eyesless.needmypuppy;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -36,6 +37,8 @@ public class Fragment_aboutapp extends Buttons_Abstract_Fragment {
     @Override
     public void onStart() {
         super.onStart();
+
+        guidlinemoover();
 
         TextView linkedtext = (TextView) parentview.findViewById(R.id.linctogit);
         String mText = getString(R.string.linktogit);
@@ -75,5 +78,16 @@ public class Fragment_aboutapp extends Buttons_Abstract_Fragment {
 
     }
 
-    // TODO: 02.08.2017 add info about license
+    //moove guidline to maximize size of 2nd container in activity_main.xml
+    private void guidlinemoover() {
+
+        int orient = getActivity().getResources().getConfiguration().orientation;
+
+        if (orient == Configuration.ORIENTATION_PORTRAIT){
+
+            ((MainActivity) getActivity()).gudlinesetter((float) 0.08);
+
+        } else  ((MainActivity) getActivity()).gudlinesetter((float) 0.001);
+    }
 }
+
