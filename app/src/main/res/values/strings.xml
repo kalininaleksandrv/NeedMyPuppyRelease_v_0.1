@@ -1,5 +1,5 @@
 <resources>
-    <string name="myapp">Создано с помощью приложения Я ВЫБИРАЮ ЩЕНКА</string>
+    <string name="myapp">Создано с помощью приложения ВЫБЕРИ ЩЕНКА</string>
     <string name="maybithisbreed">Может быть, мне завести собаку вот такой породы?</string>
     <string name="nopicaded">Данные будут отправлены без изображения. Чтобы это изменить, предоставьте приложению разрешение в разделе "Хранилище"</string>
     <string name="startscreendecription">Выбор домашнего питомца - ответственный и волнующий момент! Давайте пройдем этот путь вместе и найдем единственного и неповторимого - только Вашего - щенка!</string>
@@ -44,15 +44,15 @@
     <string name="mesage_to_devs">Написать разработчикам</string>
     <string name="about">Справка</string>
     <string name="resofsearch">ПОДРОБНО</string>
-    <string name="starttoast">Получите список рекомендованных пород, ответив на вопросы и нажав ГОТОВО, чтобы ответить на вопросы, открывайте каждый из 4х блоков нажимая на картинки</string>
+    <string name="starttoast">Ответьте на вопросы и нажмите ГОТОВО, чтобы получить список рекомендованных пород... для ответа на вопросы, открывайте каждый из 4х блоков нажимая на картинки...</string>
     <string name="sharetoast">Вы сможете поделиться выбрав конкретную породу</string>
     <string name="status">Точность подбора породы (зависит от количества отвеченных вопросов)</string>
     <string name="no_breed_found">Ни одной породы, соответствующей условиям, не найдено. Попробуйте ответить на большее количество вопросов.</string>
     <string name="params">Значения подбора</string>
     <string name="email_adress">eyesless.devtest@gmail.com</string>
-    <string name="email_subj">О программе Я ВЫБИРАЮ ЩЕНКА</string>
+    <string name="email_subj">О программе ВЫБЕРИ ЩЕНКА</string>
     <string name="project_adress">https://github.com/kalininaleksandrv/NeedMyPuppyRelease_v_0.1</string>
-    <string name="about_app">Приложение Я ВЫБИРАЮ ЩЕНКА является некоммерческим проектом с
+    <string name="about_app">Приложение ВЫБЕРИ ЩЕНКА является некоммерческим проектом с
         открытым исходным кодом, цель которого повысить качество жизни собак и их хозяев за счет
         более осознанного подхода к выбору породы. Разработано Eyesless.dev.
         Приложение находится в стадии альфа-теста (текущая версия alpha 0.0.1).
@@ -65,7 +65,7 @@
     <string name="onyourasq">По Вашему запросу найдены: </string>
     <string name="andmore">и еще </string>
     <string name="nosuchactivity">не найдено приложение для этого действия</string>
-    <string name="foralllist">Чтобы посмотреть все породы просто очистите строку и нажмите ЗНАЧОК ПОИСКА</string>
+    <string name="foralllist">Чтобы посмотреть все породы нажмите ЗНАЧОК ПОИСКА при пустой строке</string>
     <string name="catchem">Кого ловим?</string>
     <string name="externallink">Подробности в Интернете (перейти)</string>
     <string name="addrare">Включить в подборку редкие породы</string>
