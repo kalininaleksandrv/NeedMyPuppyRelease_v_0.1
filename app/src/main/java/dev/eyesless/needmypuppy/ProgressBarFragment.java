@@ -83,6 +83,8 @@ public class ProgressBarFragment extends Buttons_Abstract_Fragment implements On
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
+                if (getActivity() == null) return;
+
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
