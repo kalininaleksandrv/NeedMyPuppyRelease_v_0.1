@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
         initDrawerTogle ();
 
         drawer.addDrawerListener(drawerToggle);
+        drawerToggle.syncState();
 
         initFrameVision ();
 
