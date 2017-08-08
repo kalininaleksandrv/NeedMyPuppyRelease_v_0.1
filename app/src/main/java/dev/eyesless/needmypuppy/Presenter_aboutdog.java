@@ -44,7 +44,7 @@ public class Presenter_aboutdog {
         inact.agressive.setValue(min(inact.agressive.getValue(), minterface.iswalk()+2)); //чем хуже условия выгула, тем менее агрессивная собака допускается
         inact.agressive.setValue(min(inact.agressive.getValue(), minterface.iscynologist()+2)); // чем хуже развиты кинологические услуги, тем менее агрессивная собака допускается
 
-        inact.active.setValue(min(inact.active.getValue(), minterface.iswalk()+1)); //чем хуже условия выгула, тем менее активная собака допускается
+        inact.active.setValue(min(inact.active.getValue(), minterface.iswalk()+2)); //чем хуже условия выгула, тем менее активная собака допускается
 
         inact.size.setValue(min(inact.size.getValue(), minterface.iswalk()+1)); //чем хуже условия выгула, тем менее крупная собака допускается
 

@@ -6,10 +6,11 @@ package dev.eyesless.needmypuppy;
 
 public interface MVPInterface_forwhat {
 
-    public boolean isbabychecked ();
-    public boolean isfrendchecked ();
-    public boolean isrunchecked ();
-    public boolean ishuntchecked ();
-    public boolean isobidiencechecked ();
-    public boolean isguardchecked ();
+     boolean isbabychecked ();
+     boolean isfrendchecked ();
+     boolean isrunchecked ();
+     boolean ishuntchecked ();
+     boolean isobidiencechecked ();
+     boolean isguardchecked ();
+
 }

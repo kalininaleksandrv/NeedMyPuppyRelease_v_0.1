@@ -71,8 +71,13 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
         @Override
         public void onClick(View v) {
 
-            valuereader();
-            myButtonListner.buttonClicked(v);
+            if (counter()) {
+                valuereader();
+                myButtonListner.buttonClicked(v);
+            } else {
+
+                toastmakerany(getString(R.string.nomore3));
+            }
         }
     };
 
@@ -138,9 +143,32 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
         else return false;
     }
 
+
     public void valuereader() {
 
         presenter.valuereader();
+
+    }
+
+    private boolean counter () {
+
+
+        int i = 0;
+
+        if (isguardchecked()) { i++;}
+        if (isbabychecked()) { i++;}
+        if (isfrendchecked()) { i++;}
+        if (isrunchecked()) { i++;}
+        if (ishuntchecked()) { i++;}
+        if (isobidiencechecked()) { i++;}
+
+        if (i > 3) {
+
+            return false;
+        } else {
+
+            return true;
+        }
 
     }
 }
