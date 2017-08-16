@@ -52,7 +52,7 @@ public class InitiationActivity extends Application {
     private String [] spinner_blackorwhite = {"нужен ли полностью белый или черный окрас",
             "полностью белый", "полностью черный"};
 
-    private String [] spinner_hair = {"если нужно, выберите длинну шерсти",
+    private String [] spinner_hair = {"если нужно, выберите длину шерсти",
             "только с короткой шерстью", "только с длинной шерстью"};
 
     private String [] spinner_size = {"размер собаки не более: ",
