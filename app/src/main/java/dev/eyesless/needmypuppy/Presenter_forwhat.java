@@ -38,7 +38,6 @@ class Presenter_forwhat {
         if (minterface.isbabychecked()) {
             inact.obidience.setValue(max(inact.obidience.getValue(), 3));
             inact.agressive.setValue(min(inact.agressive.getValue(), 2));
-            inact.active.setValue(min(inact.active.getValue(), 4));
             inact.guard.setValue(min(inact.guard.getValue(), 3));
         }
 
