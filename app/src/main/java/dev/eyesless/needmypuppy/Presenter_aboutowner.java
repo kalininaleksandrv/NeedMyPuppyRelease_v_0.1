@@ -47,7 +47,7 @@ class Presenter_aboutowner {
         if (minterface.isage() < 2 || minterface.isage() ==5 || finalyactive() < 2) {inact.size.setValue(min(inact.size.getValue(), 3));} //если возраст менее 16 или активность менее нормальной (для старшего возраста менее хорошей), то максимальный размер не более 3
         if (minterface.istime() < 2 || minterface.isexp() < 2) {inact.size.setValue(min(inact.size.getValue(), 4));} //если на на собаку готов тратить менее часа в день или опыта нет то размер не более 4
 
-        inact.care.setValue(min(inact.care.getValue(), min(minterface.istime()+1, minterface.isexp() +1))); //чем больше времени или экспертизы тем больше показатель специфического ухода
+        inact.care.setValue(min(inact.care.getValue(), max(minterface.istime()+1, minterface.isexp() +1))); //чем больше времени или экспертизы тем больше показатель специфического ухода
 
         if (minterface.isage()<2 || minterface.isage() ==5){ inact.size.setValue(min(inact.size.getValue(), 3));} //возраст менее 16лет или более 60 лет, то уменьшить максимально допустимый размер до 3
 
