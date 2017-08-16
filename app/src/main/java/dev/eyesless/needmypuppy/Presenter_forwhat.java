@@ -49,7 +49,7 @@ class Presenter_forwhat {
         if (minterface.isrunchecked()) {
 
             inact.agressive.setValue(min(inact.agressive.getValue(), 3));
-            inact.active.setValue(max(inact.active.getValue(), 3));
+//            inact.active.setValue(max(inact.active.getValue(), 3));
             inact.hardy.setValue(max(inact.hardy.getValue(), 3));
         }
 
