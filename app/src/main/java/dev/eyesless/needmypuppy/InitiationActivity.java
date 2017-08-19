@@ -28,7 +28,7 @@ public class InitiationActivity extends Application {
     private String [] spinner_exp_array = {"есть ли опыт содержания и воспитания собак?",
             "нет опыта", "опыт минимальный", "я довольно опытный", "эксперт"};
 
-    private String [] spinner_time_array = {"cколько времени готов тратить на собаку?",
+    private String [] spinner_time_array = {"cколько времени Вы готовы  тратить на собаку?",
             "не более 1 часа в день", "не более 2-3 часов в день", "все свободное время"};
 
     private String [] spinner_age_array = {"сколько Вам лет?",
@@ -50,7 +50,7 @@ public class InitiationActivity extends Application {
             "не доступны", "минимально доступны", "не известно", "хорошо доступны"};
 
     private String [] spinner_grummer_array = {"есть ли опыт в уходе за шерстью или груммер:",
-            "нет / не задумывался", "есть некоторый опыт", "есть большой опыт", "есть средства на груммера"};
+            "нет / не задумывался", "есть некоторый опыт", "есть большой опыт", "есть доступ к груммеру"};
 
     private String [] spinner_blackorwhite = {"нужен ли полностью белый или черный окрас",
             "полностью белый", "полностью черный"};
@@ -99,7 +99,7 @@ public class InitiationActivity extends Application {
     //добавить (1) или не добавлять (0) редкие породы
 
     MyBucket obidience = new MyBucket("Послушание / обучаемость", 0);
-    MyBucket guard = new MyBucket("Охранные качества", 0);
+    MyBucket guard = new MyBucket("Охранные качества", 5);//в логике показатель снижается по этому выставлен максимальный
     MyBucket agressive = new MyBucket("Агрессивность", 5);//в логике показатель снижается по этому выставлен максимальный
     MyBucket active = new MyBucket("Активность", 5); //в логике показатель снижается по этому выставлен максимальный
     MyBucket hardy = new MyBucket("Выносливость", 0);

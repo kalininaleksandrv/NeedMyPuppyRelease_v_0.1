@@ -44,6 +44,7 @@ class Presenter_aboutowner {
         if (minterface.isage()<2 || minterface.isage() ==5){ inact.agressive.setValue(min(inact.agressive.getValue(), 2));} //возраст менее 16лет или более 60 лет, то уменьшить максимально допустимую агрессивность до 2, даже если ранее выставлено больше
 
         inact.active.setValue(min(inact.active.getValue(), max(finalyactive(), max(minterface.isexp(), minterface.istime())))); //чем больше времени, опыта или активности, тем более активная порода допускается
+
         if (minterface.isage() < 2 || minterface.isage() ==5 || finalyactive() < 2) {inact.size.setValue(min(inact.size.getValue(), 3));} //если возраст менее 16 или активность менее нормальной (для старшего возраста менее хорошей), то максимальный размер не более 3
         if (minterface.istime() < 2 || minterface.isexp() < 2) {inact.size.setValue(min(inact.size.getValue(), 4));} //если на на собаку готов тратить менее часа в день или опыта нет то размер не более 4
 

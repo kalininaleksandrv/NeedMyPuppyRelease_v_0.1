@@ -105,7 +105,7 @@ public class BreedDataBaseCreator {
                 + title + like +
                 and + image_fs_res_id + like +
                 and + obidience + more +
-                and + guard + more +
+                and + guard + less +
                 and + agressive + less +
                 and + active + less +
                 and + hardy + more +
