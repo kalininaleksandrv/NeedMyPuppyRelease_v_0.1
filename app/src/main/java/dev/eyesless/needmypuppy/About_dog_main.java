@@ -1,10 +1,7 @@
 package dev.eyesless.needmypuppy;
 
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,44 +10,49 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInterface_aboutdog {
 
-
+    public ImageButton completebutton_ad;
     private CheckBox havedog;
-    private CheckBox havechild;
-
+    private CheckBox havepet;
     private Spinner spinner_walking;
     private Spinner spinner_cynologist;
     private Spinner spinner_vet;
+    private Spinner spiner_exp;
+    private Spinner spiner_time;
+    private Spinner spiner_age;
+    private Spinner spiner_activ;
+    private Spinner spiner_family;
+    private Spinner spiner_grummer;
 
     private int walkvalue;
     private int cynologistvalue;
     private int vetvalue;
+    private int expvalue;
+    private int timevalue;
+    private int agevalue;
+    private int activvalue;
+    private int familyvalue;
+    private int grummervalue;
 
     public static final String SPINNER_WALK = "spinnerwalk";
     public static final String SPINNER_CYNO = "spinnercyno";
     public static final String SPINNER_VET = "spinnervet";
+    public static final String SPINNER_EXP = "spinnerexp";
+    public static final String SPINNER_TIME = "spinnertime";
+    public static final String SPINNER_AGE = "spinnerage";
+    public static final String SPINNER_ACIV = "spinneractive";
+    public static final String SPINNER_FAMILY = "spinnefamily";
+    public static final String SPINNER_GRUMMER = "spinnergrummer";
 
     private Bundle savedState;
 
     Presenter_aboutdog presenter;
 
-
     public About_dog_main() {
-        // Required empty public constructor
-
         presenter = new Presenter_aboutdog(this);
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,21 +68,24 @@ public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInte
     @Override
     public void onStart() {
         super.onStart();
-
-
         statussetter ();
 
         createspinner(spinner_walking, inact.getSpinner_walk_array());
         createspinner(spinner_cynologist, inact.getSpinner_cynologist_array());
         createspinner(spinner_vet, inact.getSpinner_vet_array());
-
+        createspinner(spiner_exp, inact.getSpinner_exp_array());
+        createspinner(spiner_time, inact.getSpinner_time_array());
+        createspinner(spiner_age, inact.getSpinner_age_array());
+        createspinner(spiner_activ, inact.getSpinner_activ_array());
+        createspinner(spiner_family, inact.getSpinner_family_array());
+        createspinner(spiner_grummer, inact.getSpinner_grummer_array());
 
         if (savedState != null) {restorespinnersvalue();}
 
         presenterinactsetter(inact);
 
         //реализуем онкликлистнер на подключенной кнопке
-        completebutton.setOnClickListener(myOnClickListner);
+        completebutton_ad.setOnClickListener(myOnClickListner);
     }
 
     private void restorespinnersvalue() {
@@ -88,10 +93,23 @@ public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInte
         spinner_walking.setSelection(savedState.getInt(SPINNER_WALK));
         spinner_cynologist.setSelection(savedState.getInt(SPINNER_CYNO));
         spinner_vet.setSelection(savedState.getInt(SPINNER_VET));
+        spiner_exp.setSelection(savedState.getInt(SPINNER_EXP));
+        spiner_time.setSelection(savedState.getInt(SPINNER_TIME));
+        spiner_age.setSelection(savedState.getInt(SPINNER_AGE));
+        spiner_activ.setSelection(savedState.getInt(SPINNER_ACIV));
+        spiner_family.setSelection(savedState.getInt(SPINNER_FAMILY));
+        spiner_grummer.setSelection(savedState.getInt(SPINNER_GRUMMER));
 
         walkvalue = savedState.getInt(SPINNER_WALK);
         cynologistvalue = savedState.getInt(SPINNER_CYNO);
         vetvalue = savedState.getInt(SPINNER_VET);
+        expvalue = savedState.getInt(SPINNER_EXP);
+        timevalue = savedState.getInt(SPINNER_TIME);
+        agevalue = savedState.getInt(SPINNER_AGE);
+        activvalue = savedState.getInt(SPINNER_ACIV);
+        familyvalue = savedState.getInt(SPINNER_FAMILY);
+        grummervalue = savedState.getInt(SPINNER_GRUMMER);
+
     }
 
     private void presenterinactsetter(InitiationActivity inact) {
@@ -119,16 +137,30 @@ public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInte
                     case (R.id.spinner_walking):
                         walkvalue = position;
                         break;
-
                     case (R.id.spinner_cynologist):
                         cynologistvalue = position;
                         break;
-
                     case (R.id.spinner_vet):
-
                         vetvalue = position;
                         break;
-
+                    case (R.id.spinner_exp):
+                        expvalue = position;
+                        break;
+                    case (R.id.spinner_time):
+                        timevalue = position;
+                        break;
+                    case (R.id.spinner_age):
+                        agevalue = position;
+                        break;
+                    case (R.id.spinner_activ):
+                        activvalue = position;
+                        break;
+                    case (R.id.spinner_family):
+                        familyvalue = position;
+                        break;
+                    case (R.id.spinner_grummer):
+                        grummervalue = position;
+                        break;
                 }
             }
             @Override
@@ -140,36 +172,43 @@ public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInte
     }
 
     //создаем онклик листнер для кнопок и передаем в методе онклик значение кнопки в метод buttonclicked интерфейса
-
     View.OnClickListener myOnClickListner = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
             valuereader();
-
             myButtonListner.buttonClicked(v);
-
         }
     };
 
     private void statussetter() {
-
+        completebutton_ad = (ImageButton) parentview.findViewById(R.id.button_complete_aboutdog);
         havedog = (CheckBox) parentview.findViewById(R.id.checkBox_havedog);
-        havechild = (CheckBox) parentview.findViewById(R.id.checkBox_havechild);
+        havepet = (CheckBox) parentview.findViewById(R.id.checkBox_havepet);
         spinner_walking = (Spinner)parentview.findViewById(R.id.spinner_walking);
         spinner_cynologist = (Spinner)parentview.findViewById(R.id.spinner_cynologist);
         spinner_vet = (Spinner)parentview.findViewById(R.id.spinner_vet);
-
+        spiner_exp = (Spinner)parentview.findViewById(R.id.spinner_exp);
+        spiner_time = (Spinner)parentview.findViewById(R.id.spinner_time);
+        spiner_age = (Spinner)parentview.findViewById(R.id.spinner_age);
+        spiner_activ = (Spinner)parentview.findViewById(R.id.spinner_activ);
+        spiner_family = (Spinner)parentview.findViewById(R.id.spinner_family);
+        spiner_grummer = (Spinner)parentview.findViewById(R.id.spinner_grummer);
 
         if (inact.isButtonaboutdogispressed()) {
 
             toastmaker();
 
             havedog.setEnabled(false);
-            havechild.setEnabled(false);
+            havepet.setEnabled(false);
             spinner_walking.setEnabled(false);
             spinner_cynologist.setEnabled(false);
             spinner_vet.setEnabled(false);
+            spiner_exp.setEnabled(false);
+            spiner_time.setEnabled(false);
+            spiner_age.setEnabled(false);
+            spiner_activ.setEnabled(false);
+            spiner_family.setEnabled(false);
+            spiner_grummer.setEnabled(false);
         }
     }
 
@@ -179,6 +218,12 @@ public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInte
         savedInstanceState.putInt(SPINNER_WALK, spinner_walking.getSelectedItemPosition());
         savedInstanceState.putInt(SPINNER_CYNO, spinner_cynologist.getSelectedItemPosition());
         savedInstanceState.putInt(SPINNER_VET, spinner_vet.getSelectedItemPosition());
+        savedInstanceState.putInt(SPINNER_EXP, spiner_exp.getSelectedItemPosition());
+        savedInstanceState.putInt(SPINNER_TIME, spiner_time.getSelectedItemPosition());
+        savedInstanceState.putInt(SPINNER_AGE, spiner_age.getSelectedItemPosition());
+        savedInstanceState.putInt(SPINNER_ACIV, spiner_activ.getSelectedItemPosition());
+        savedInstanceState.putInt(SPINNER_FAMILY, spiner_family.getSelectedItemPosition());
+        savedInstanceState.putInt(SPINNER_GRUMMER, spiner_grummer.getSelectedItemPosition());
 
 
         super.onSaveInstanceState(savedInstanceState);
@@ -186,16 +231,14 @@ public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInte
     }
 
     @Override
-    public boolean ishavechildboxchecked() {
-
-        if (havechild.isChecked()) return true;
+    public boolean ishavedogboxchecked() {
+        if (havedog.isChecked()) return true;
         else return false;
     }
 
     @Override
-    public boolean ishavedogboxchecked() {
-
-        if (havedog.isChecked()) return true;
+    public boolean ishavepetboxchecked() {
+        if (havepet.isChecked()) return true;
         else return false;
     }
 
@@ -214,8 +257,34 @@ public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInte
         return vetvalue;
     }
 
-    public void valuereader () {
+    @Override
+    public int isexp() {
+        return expvalue;
+    }
 
+    @Override
+    public int istime() {
+        return timevalue;
+    }
+
+    @Override
+    public int isage() {
+        return agevalue;
+    }
+
+    @Override
+    public int isactive() {
+        return activvalue;
+    }
+
+    @Override
+    public int isfamily() { return familyvalue;}
+
+    @Override
+    public int isgrimmer() {return grummervalue;}
+
+
+    public void valuereader () {
         presenter.valuereader();
     }
 }

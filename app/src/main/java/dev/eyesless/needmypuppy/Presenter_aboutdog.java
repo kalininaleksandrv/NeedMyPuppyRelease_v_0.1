@@ -35,8 +35,6 @@ public class Presenter_aboutdog {
 
         if (minterface.ishavedogboxchecked()){inact.agressive.setValue(min(inact.agressive.getValue(),4));} //в случае другой собаки агрессивность не более 3
 
-        if (minterface.ishavechildboxchecked()){inact.agressive.setValue(min(inact.agressive.getValue(),2));} //в случае наличия детей агрессивность не более 2
-
         inact.obidience.setValue(max(inact.obidience.getValue(), 3-minterface.iscynologist())); //чем лучше кинологические услуги тем хуже может быть послушание
 
  //       inact.guard.setValue(max(inact.guard.getValue(), minterface.iscynologist())); //чем хуже развиты кинологические услуги, тем менее выраженные охранные качества допускаются

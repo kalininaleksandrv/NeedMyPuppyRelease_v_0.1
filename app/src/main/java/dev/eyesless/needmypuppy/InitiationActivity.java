@@ -41,13 +41,16 @@ public class InitiationActivity extends Application {
             "никто", "очень редко", "да, часто, их физическая форма лучше моей", "да, часто, их физическая форма хуже моей"};
 
     private String [] spinner_walk_array = {"где собака будет гулять чаще всего:",
-            "минимальные условия для выгула", "ограниченный выгул в городской черте", "лес или лесопарк", "неограниченно на своей территории"};
+            "минимальные условия для выгула", "ограниченный выгул в городской черте", "лес или лесопарк", "регулярные выезды на охоту, трекинг", "неограниченно на своей территории"};
 
     private String [] spinner_cynologist_array = {"есть ли доступ к профессиональному кинологу, дрессировщику:",
             "нет", "ролики в интернет, литертатура", "вероятно есть", "развитые кинологические услуги"};
 
     private String [] spinner_vet_array = {"оцените доступность ветеринарных услуг:",
             "не доступны", "минимально доступны", "не известно", "хорошо доступны"};
+
+    private String [] spinner_grummer_array = {"есть ли опыт в уходе за шерстью или груммер:",
+            "нет / не задумывался", "есть некоторый опыт", "есть большой опыт", "есть средства на груммера"};
 
     private String [] spinner_blackorwhite = {"нужен ли полностью белый или черный окрас",
             "полностью белый", "полностью черный"};
@@ -79,6 +82,8 @@ public class InitiationActivity extends Application {
     public String[] getSpinner_cynologist_array() {return spinner_cynologist_array;}
 
     public String[] getSpinner_vet_array() {return spinner_vet_array;}
+
+    public String[] getSpinner_grummer_array() {return spinner_grummer_array;}
 
     //создаем 12 корзин для основных свойств выбора собаки
     //послушание 1- породы не способные к дрессировке, 2 -хаски, 5 миалинуа
@@ -246,10 +251,9 @@ public class InitiationActivity extends Application {
 
         if (buttonforwhatispressed) i++;
         if (buttonaboutdogispressed) i++;
-        if (buttonaboutownerispressed) i++;
         if (buttonmorphoispressed) i++;
 
-        return i*25;
+        return i*33;
     }
 
 }

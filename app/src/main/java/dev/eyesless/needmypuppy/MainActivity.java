@@ -218,6 +218,10 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
                 frameRemoover(new Buttons_main(), "ButtonsMain");
                 break;
 
+            case R.id.button_complete_aboutdog:
+                frameRemoover(new Forwhat_main(), "ForWhat");
+                break;
+
             case R.id.imageButton_aboutowner:
                 //check if button already been pressed, cant pressed next time
                 if (inact.isButtonaboutownerispressed()){toastmaker(getString(R.string.disabled_button));}
@@ -466,3 +470,5 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
     }
 
 }
+
+// TODO: 17.08.2017 использовать двухуровневый подбор как при машинном обучении, групируя параметры в т.ч. в пересекающиеся группы

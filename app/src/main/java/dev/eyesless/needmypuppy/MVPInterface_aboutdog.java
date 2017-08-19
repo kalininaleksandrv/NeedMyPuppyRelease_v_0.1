@@ -6,11 +6,17 @@ package dev.eyesless.needmypuppy;
 
 public interface MVPInterface_aboutdog {
 
-    public boolean ishavechildboxchecked ();
-    public boolean ishavedogboxchecked ();
+    boolean ishavedogboxchecked ();
+    boolean ishavepetboxchecked ();
 
     int iswalk();
     int iscynologist();
     int isvet ();
+    int isexp();
+    int istime();
+    int isage();
+    int isactive();
+    int isfamily();
+    int isgrimmer();
 
 }

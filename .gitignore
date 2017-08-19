@@ -12,3 +12,6 @@
 *.iml
 .idea
 out
+/app/app-release.apk
+/app/.gitignore
+/.gitignore

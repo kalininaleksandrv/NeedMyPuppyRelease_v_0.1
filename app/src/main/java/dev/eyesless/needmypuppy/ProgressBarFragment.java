@@ -77,7 +77,7 @@ public class ProgressBarFragment extends Buttons_Abstract_Fragment implements On
     private void runStatusBar(final int count) {
 
         bnp = (NumberProgressBar)parentview.findViewById(R.id.numberProgressBar);
-        bnp.setProgress(count-25);
+        bnp.setProgress(count-33);
         bnp.setOnProgressBarListener(this);
         timer = new Timer();
         timer.schedule(new TimerTask() {
