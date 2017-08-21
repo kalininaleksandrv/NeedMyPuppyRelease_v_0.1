@@ -127,7 +127,7 @@ public class BreedDataBaseCreator {
         String title = "%";
 
         int obidience_n = inact.obidience.getValue()-1;
-        int guard_n = inact.guard.getValue()-1;
+        int guard_n = inact.guard.getValue()+1;
         int agressive_n = inact.agressive.getValue()+1;
         int active_n = inact.active.getValue()+1;
         int hardy_n = inact.hardy.getValue()-1;

@@ -14,7 +14,7 @@ import android.widget.Spinner;
 public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInterface_aboutdog {
 
     public ImageButton completebutton_ad;
-    private CheckBox havedog;
+    private CheckBox havechild;
     private CheckBox havepet;
     private Spinner spinner_walking;
     private Spinner spinner_cynologist;
@@ -182,7 +182,7 @@ public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInte
 
     private void statussetter() {
         completebutton_ad = (ImageButton) parentview.findViewById(R.id.button_complete_aboutdog);
-        havedog = (CheckBox) parentview.findViewById(R.id.checkBox_havedog);
+        havechild = (CheckBox) parentview.findViewById(R.id.checkBox_havechild);
         havepet = (CheckBox) parentview.findViewById(R.id.checkBox_havepet);
         spinner_walking = (Spinner)parentview.findViewById(R.id.spinner_walking);
         spinner_cynologist = (Spinner)parentview.findViewById(R.id.spinner_cynologist);
@@ -198,7 +198,7 @@ public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInte
 
             toastmaker();
 
-            havedog.setEnabled(false);
+            havechild.setEnabled(false);
             havepet.setEnabled(false);
             spinner_walking.setEnabled(false);
             spinner_cynologist.setEnabled(false);
@@ -231,8 +231,8 @@ public class About_dog_main extends Buttons_Abstract_Fragment implements MVPInte
     }
 
     @Override
-    public boolean ishavedogboxchecked() {
-        if (havedog.isChecked()) return true;
+    public boolean ishavechildboxchecked() {
+        if (havechild.isChecked()) return true;
         else return false;
     }
 

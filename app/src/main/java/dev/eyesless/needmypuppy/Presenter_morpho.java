@@ -28,11 +28,11 @@ public class Presenter_morpho {
 
         inact.setButtonmorphoispressed(true);
 
-        if (minterface.isboxchecked()){inact.noalergy.setValue(1);}
-        if (minterface.israreboxchecked()){inact.rare.setValue(1);}
-        inact.blackorwhite.setValue(minterface.isblackorwhite());
-        inact.hair.setValue(minterface.ishair());
-        inact.size.setValue(min(inact.size.getValue(), minterface.issize()));
+//        if (minterface.isboxchecked()){inact.noalergy.setValue(1);}
+//        if (minterface.israreboxchecked()){inact.rare.setValue(1);}
+//        inact.blackorwhite.setValue(minterface.isblackorwhite());
+//        inact.hair.setValue(minterface.ishair());
+//        inact.size.setValue(min(inact.size.getValue(), minterface.issize()));
 
     }
 }
