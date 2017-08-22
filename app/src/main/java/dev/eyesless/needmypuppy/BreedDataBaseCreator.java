@@ -33,7 +33,9 @@ public class BreedDataBaseCreator {
 
         newbreeddatabasehelper = new BreedFromAssetsDataBaseHelper(myContext);
 
-        if (newbreeddatabasehelper == null){newbreeddatabasehelper = new BreedDataBaseHelper(myContext);}
+        if (newbreeddatabasehelper == null){
+            newbreeddatabasehelper = new BreedDataBaseHelper(myContext);
+        }
 
         mysecondbreeddatabase = newbreeddatabasehelper.getWritableDatabase();
 
@@ -90,6 +92,14 @@ public class BreedDataBaseCreator {
         String hair = BreedDataBaseHelper.KEY_HAIR;
         String blackorwhite = BreedDataBaseHelper.KEY_BLACKORWHITE;
         String noalergy = BreedDataBaseHelper.KEY_NOALERGY;
+        String for_child = BreedDataBaseHelper.KEY_FORCHILD;
+        String for_company = BreedDataBaseHelper.KEY_FORCOMPANY;
+        String for_running = BreedDataBaseHelper.KEY_FORRUNNING;
+        String for_hunt = BreedDataBaseHelper.KEY_FORHUNT;
+        String for_obidience = BreedDataBaseHelper.KEY_FOROBIDIENCE;
+        String for_guardterritory = BreedDataBaseHelper.KEY_FORGUARDTERRITORY;
+        String for_zks = BreedDataBaseHelper.KEY_FORZKS;
+        String for_agility = BreedDataBaseHelper.KEY_FORAGILITY;
 
         String swosh = ",";
         String like = " LIKE ?";
@@ -101,7 +111,10 @@ public class BreedDataBaseCreator {
 
         Cursor mCursor = db.rawQuery("SELECT "+ title + swosh + description + swosh + description_full + swosh + image_res_id + swosh+ image_fs_res_id + swosh
                 + obidience + swosh + guard + swosh + agressive + swosh + active+ swosh + hardy + swosh + size + swosh
-                + care + swosh + hunt + swosh + weblinc + swosh + weblinc_wiki + swosh + fciid + swosh + hair + swosh + blackorwhite + swosh + noalergy + " FROM " + dbname + " WHERE "
+                + care + swosh + hunt + swosh + weblinc + swosh + weblinc_wiki + swosh + fciid + swosh + hair
+                        + swosh + blackorwhite + swosh + noalergy + swosh + for_child + swosh + for_company
+                        + swosh + for_running + swosh + for_hunt + swosh + for_obidience + swosh + for_guardterritory
+                        + swosh + for_zks + swosh + for_agility + " FROM " + dbname + " WHERE "
                 + title + like +
                 and + image_fs_res_id + like +
                 and + obidience + more +
@@ -134,28 +147,17 @@ public class BreedDataBaseCreator {
         int size_n = inact.size.getValue()+1;
         int care_n = inact.care.getValue()+1;
 
-        String hunt_n = getHunt();
+        String hunt_n = "%";
         String hair_n = getHair();
         String blackorwhite_n = getBlackorwhite();
         String noalergy_n = getNoalergy();
-        String rare = getRare();
+        String rare = "%";
 
 
         return new String [] {title, rare, String.valueOf(obidience_n), String.valueOf(guard_n),
                 String.valueOf(agressive_n), String.valueOf(active_n),
                 String.valueOf(hardy_n), String.valueOf(size_n),
                 String.valueOf(care_n), hunt_n, hair_n, blackorwhite_n, noalergy_n};
-    }
-
-    private String getRare() {
-
-        if (inact.rare.getValue() == 0) return "no"; else return "%";
-
-    }
-
-    private String getHunt() {
-
-        if (inact.hunt.getValue() == 0) return "%"; else return "yes";
     }
 
     private String getHair() {
@@ -191,7 +193,9 @@ public class BreedDataBaseCreator {
                     myCursor.getString(3), myCursor.getString(4),
                     myCursor.getInt(5), myCursor.getInt(6), myCursor.getInt(7), myCursor.getInt(8),
                     myCursor.getInt(9), myCursor.getInt(10),myCursor.getInt(11), myCursor.getString(12), myCursor.getString(13), myCursor.getString(14), myCursor.getInt(15),
-                    myCursor.getString(16), myCursor.getString(17), myCursor.getString(18) );
+                    myCursor.getString(16), myCursor.getString(17), myCursor.getString(18),
+                    myCursor.getInt(19), myCursor.getInt(20), myCursor.getInt(21), myCursor.getInt(22), myCursor.getInt(23),
+                    myCursor.getInt(24), myCursor.getInt(25), myCursor.getInt(26));
             myListOfBreed_m.add(myBreedM);
         }
 
@@ -201,7 +205,9 @@ public class BreedDataBaseCreator {
                     myCursor.getString(3), myCursor.getString(4),
                     myCursor.getInt(5), myCursor.getInt(6), myCursor.getInt(7), myCursor.getInt(8),
                     myCursor.getInt(9), myCursor.getInt(10),myCursor.getInt(11), myCursor.getString(12), myCursor.getString(13), myCursor.getString(14), myCursor.getInt(15),
-                    myCursor.getString(16), myCursor.getString(17), myCursor.getString(18));
+                    myCursor.getString(16), myCursor.getString(17), myCursor.getString(18),
+                    myCursor.getInt(19), myCursor.getInt(20), myCursor.getInt(21), myCursor.getInt(22), myCursor.getInt(23),
+                    myCursor.getInt(24), myCursor.getInt(25), myCursor.getInt(26));
             myListOfBreed_m.add(myBreedM);
         }
 
@@ -218,7 +224,8 @@ public class BreedDataBaseCreator {
     Breed_mod breed_m_creator (String name, String description, String description_full,
                                String resourceId, String resourceIdBig, int obidience, int guard, int agressive,
                                int active, int hardy, int size, int care, String hunt, String weblinc, String weblinc_wiki, int fciid, String hair,
-                               String blackorwhite, String noalergy){
+                               String blackorwhite, String noalergy, int for_child, int for_company, int for_running, int for_hunt, int for_obidience,
+                               int for_guardterritory, int for_zks, int for_agility){
 
         Breed_mod myBreedM = new Breed_mod();
         myBreedM.setB_title(name);
@@ -240,7 +247,14 @@ public class BreedDataBaseCreator {
         myBreedM.setB_hair(hair);
         myBreedM.setB_blackorwhite(blackorwhite);
         myBreedM.setB_noalergy(noalergy);
-
+        myBreedM.setFor_child(for_child);
+        myBreedM.setFor_company(for_company);
+        myBreedM.setFor_running(for_running);
+        myBreedM.setFor_hunt(for_hunt);
+        myBreedM.setFor_obidience(for_obidience);
+        myBreedM.setFor_guardterritory(for_guardterritory);
+        myBreedM.setFor_zks(for_zks);
+        myBreedM.setFor_agility(for_agility);
 
         return myBreedM;
     }

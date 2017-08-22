@@ -1,28 +1,15 @@
 package dev.eyesless.needmypuppy;
 
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import static java.lang.Math.max;
-import static java.lang.Math.min;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterface_forwhat{
 
 
@@ -32,6 +19,14 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
    private CheckBox huntcheck;
    private CheckBox obidencecheck;
    private CheckBox guardcheck;
+   private CheckBox zkscheck;
+   private CheckBox agilitycheck;
+    private ImageButton compleetbutton_forwhat;
+    private TextView numberofbreeds;
+    private TextView number_forchild;
+
+
+    private final String FOUND = "найдено: ";
 
     Presenter_forwhat presenter;
 
@@ -56,7 +51,9 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
 
         presenterinactsetter(inact);
 
-        completebutton.setOnClickListener(myOnClickListner);
+        compleetbutton_forwhat.setOnClickListener(myOnClickListner);
+
+        presenter.countTheBreeds();
     }
 
     private void presenterinactsetter(InitiationActivity inact) {
@@ -70,14 +67,7 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
     View.OnClickListener myOnClickListner = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
-            if (counter()) {
                 valuereader();
-                myButtonListner.buttonClicked(v);
-            } else {
-
-                toastmakerany(getString(R.string.nomore3));
-            }
         }
     };
 
@@ -86,12 +76,18 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
 
     private void checkbuttonstatussetter() {
 
+        numberofbreeds = (TextView) parentview.findViewById(R.id.textView_numberOfBreeds);
+        number_forchild = (TextView) parentview.findViewById(R.id.number_for_child);
         babycheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt1);
         frendcheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt2);
         runcheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt3);
         huntcheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt4);
         obidencecheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt5);
         guardcheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt6);
+        zkscheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt7);
+        agilitycheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt8);
+        compleetbutton_forwhat = (ImageButton)parentview.findViewById(R.id.button_complete_forwhat);
+
 
         if (inact.isButtonforwhatispressed()) {
 
@@ -103,7 +99,8 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
             huntcheck.setEnabled(false);
             obidencecheck.setEnabled(false);
             guardcheck.setEnabled(false);
-
+            zkscheck.setEnabled(false);
+            agilitycheck.setEnabled(false);
         }
     }
 
@@ -143,6 +140,21 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
         else return false;
     }
 
+    @Override
+    public boolean iszkschecked() {
+        if (zkscheck.isChecked()) return true;
+        else return false;    }
+
+    @Override
+    public boolean isagilitychecked() {
+        if (agilitycheck.isChecked()) return true;
+        else return false;    }
+
+    @Override
+    public void setnumberofbreeds(int breeds, Integer[] count) {
+        numberofbreeds.setText("ИТОГО ВЫБРАНО: " + String.valueOf(breeds));
+        number_forchild.setText(FOUND+String.valueOf(count[0]));
+    }
 
     public void valuereader() {
 
@@ -150,26 +162,5 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
 
     }
 
-    private boolean counter () {
-
-
-        int i = 0;
-
-        if (isguardchecked()) { i++;}
-        if (isbabychecked()) { i++;}
-        if (isfrendchecked()) { i++;}
-        if (isrunchecked()) { i++;}
-        if (ishuntchecked()) { i++;}
-        if (isobidiencechecked()) { i++;}
-
-        if (i > 3) {
-
-            return false;
-        } else {
-
-            return true;
-        }
-
-    }
 }
 

@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
 
                 if (inact.getMyListOfBreed_m().size() != 0){
 
-                    frameRemoover(new Recycle_view_fragment(), "RecycleView");}
+                    frameRemoover(new Forwhat_main(), "ForWhat");}
 
                 else toastmaker(getString(R.string.no_breed_found));
 

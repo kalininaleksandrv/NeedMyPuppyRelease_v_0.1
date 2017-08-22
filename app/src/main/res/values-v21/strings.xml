@@ -11,8 +11,10 @@
     <string name="flag_opt2">просто для компании</string>
     <string name="flag_opt3">пробежек по утрам, трекинга</string>
     <string name="flag_opt4">охотиться</string>
-    <string name="flag_opt5">для соревнований (напр. послушание)</string>
-    <string name="flag_opt6">для защитно-караульной службы</string>
+    <string name="flag_opt5">для соревнований по послушанию</string>
+    <string name="flag_opt6">для охраны территории</string>
+    <string name="flag_opt7">для защитной службы, ЗКС</string>
+    <string name="flag_opt8">для соревнований по agility</string>
     <string name="btn_block1">О Вас...</string>
     <string name="btn_block2">О собаке...</string>
     <string name="btn_block3">О радостных минутах...</string>
@@ -22,7 +24,8 @@
     <string name="resultText"></string>
     <string name="no_data">ошибка загрузки</string>
     <string name="intro_about_owner_activity">При выборе собаки, очень важно понимать Ваши возможности. Для этого ответьте на вопросы ниже</string>
-    <string name="intro_about_for_what_activity">Разные породы собак лучше подходят для разных занятий. Выберите - для чего, главным образом, вы берете собаку? (не боле 3х вариантов)</string>
+    <string name="intro_about_for_what_activity">Разные породы собак лучше подходят для разных занятий. Выберите - для чего, главным образом, вы берете собаку?
+    Обратите внимание, что некоторые варианты могут противоречить друг-другу</string>
     <string name="intro_about_infrastructure">Для некоторых пород очень важно - какие окружающие условия Вы им обеспечите.</string>
     <string name="intro_about_morpho">Ваша собака должна приносить Вам эстетическое удовольствие</string>
     <string name="action_save">сохранить профиль ответов</string>

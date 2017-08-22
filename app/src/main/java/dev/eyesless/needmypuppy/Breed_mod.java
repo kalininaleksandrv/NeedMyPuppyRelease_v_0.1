@@ -172,6 +172,38 @@ public class Breed_mod implements Serializable {
         this.b_weblinc_wiki = b_weblinc_wiki;
     }
 
+    public int getFor_child() {return for_child; }
+
+    public void setFor_child(int for_child) { this.for_child = for_child; }
+
+    public int getFor_company() {return for_company; }
+
+    public void setFor_company(int for_company) {this.for_company = for_company;}
+
+    public int getFor_running() {return for_running; }
+
+    public void setFor_running(int for_running) {this.for_running = for_running;}
+
+    public int getFor_hunt() {return for_hunt;}
+
+    public void setFor_hunt(int for_hunt) {this.for_hunt = for_hunt;}
+
+    public int getFor_obidience() {return for_obidience;}
+
+    public void setFor_obidience(int for_obidience) {this.for_obidience = for_obidience;}
+
+    public int getFor_guardterritory() {return for_guardterritory;}
+
+    public void setFor_guardterritory(int for_guardterritory) {this.for_guardterritory = for_guardterritory;}
+
+    public int getFor_zks() {return for_zks;}
+
+    public void setFor_zks(int for_zks) {this.for_zks = for_zks;}
+
+    public int getFor_agility() {return for_agility;}
+
+    public void setFor_agility(int for_agility) {this.for_agility = for_agility; }
+
 
     private String b_title;
     private String b_description;
@@ -194,4 +226,12 @@ public class Breed_mod implements Serializable {
     private String b_noalergy;
     private boolean b_favor;
     private String b_comment;
+    private int for_child;
+    private int for_company;
+    private int for_running;
+    private int for_hunt;
+    private int for_obidience;
+    private int for_guardterritory;
+    private int for_zks;
+    private int for_agility;
 }

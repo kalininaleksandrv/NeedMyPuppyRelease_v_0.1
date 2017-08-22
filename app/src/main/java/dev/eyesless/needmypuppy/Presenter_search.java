@@ -103,7 +103,7 @@ public class Presenter_search {
         String title = s;
 
         int obidience_n = 0;
-        int guard_n = 0;
+        int guard_n = 6;
         int agressive_n = 6;
         int active_n = 6;
         int hardy_n = 0;

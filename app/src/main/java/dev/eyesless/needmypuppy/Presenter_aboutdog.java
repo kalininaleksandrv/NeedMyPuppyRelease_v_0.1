@@ -50,7 +50,7 @@ public class Presenter_aboutdog {
 
         //активность
         inact.active.setValue(min(inact.active.getValue(), max(finalyactive(), max (minterface.iswalk()+1 ,minterface.istime()+2)))); //чем больше времени или активности, тем более активная порода допускается, также если хорошие условия выгула
-        if (minterface.istime()>1 && (minterface.isexp()>2 || minterface.iscynologist()>3)) {inact.active.setValue(min(inact.active.getValue(), 4));} //если нет опыта и нет кинолога или времени, то минимальная активность 4
+        if (minterface.istime()<2 && (minterface.isexp()<3 || minterface.iscynologist()<4)) {inact.active.setValue(min(inact.active.getValue(), 4));} //если нет опыта и нет кинолога или времени, то минимальная активность 4
         if (minterface.isage() >3) {inact.size.setValue(min(inact.size.getValue(), finalyactive()));} //если возраст больше 40 то активность собаки прямо равна активность (finalyactive)
         if (finalyactive()<3){ inact.active.setValue(min(inact.active.getValue(), 3));} //если уровень физической активности не удовлетворительный то уменьшить максимально допустимую активность до 3, даже если ранее выставлено больше
 
