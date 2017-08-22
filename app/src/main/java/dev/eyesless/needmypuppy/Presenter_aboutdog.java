@@ -46,16 +46,19 @@ public class Presenter_aboutdog {
         if (minterface.istime()>1 && (minterface.iscynologist()==4 || minterface.isexp()>3)){inact.agressive.setValue(max(inact.agressive.getValue(), minterface.istime()+2));} //если времени  2-3 часа в день и есть отличный доступ к кинологу или пользователь ЭКСПЕРТ, повысить максимально допустимую агрессию до 4, даже если ранее выставлено больше
         if (minterface.iswalk()==5 && minterface.isexp()>1) {inact.agressive.setValue(max(inact.agressive.getValue(),(minterface.isexp()+2)));}//если собака содержится на своем участке, то допускается повышенная агрессия, кореллирующая с опытом
         if (minterface.isage()<2 || (minterface.isage() ==5 && minterface.isfamily() !=3 && minterface.iswalk()!=5)){ inact.agressive.setValue(min(inact.agressive.getValue(), 2));} //возраст менее 16лет или более 60 лет при отсутствии более активных членов семьи, то уменьшить максимально допустимую агрессивность до 2, даже если ранее выставлено больше
+        if (finalyactive()<3){ inact.agressive.setValue(min(inact.agressive.getValue(), 2));} //если уровень физической активности не удовлетворительный то уменьшить максимально допустимую агрессивность до 2, даже если ранее выставлено больше
 
         //активность
         inact.active.setValue(min(inact.active.getValue(), max(finalyactive(), max (minterface.iswalk()+1 ,minterface.istime()+2)))); //чем больше времени или активности, тем более активная порода допускается, также если хорошие условия выгула
-       if (minterface.istime()>1 && (minterface.isexp()>2 || minterface.iscynologist()>3)) {inact.active.setValue(min(inact.active.getValue(), 4));} //если нет опыта и нет кинолога или времени, то минимальная активность 4
+        if (minterface.istime()>1 && (minterface.isexp()>2 || minterface.iscynologist()>3)) {inact.active.setValue(min(inact.active.getValue(), 4));} //если нет опыта и нет кинолога или времени, то минимальная активность 4
+        if (minterface.isage() >3) {inact.size.setValue(min(inact.size.getValue(), finalyactive()));} //если возраст больше 40 то активность собаки прямо равна активность (finalyactive)
+        if (finalyactive()<3){ inact.active.setValue(min(inact.active.getValue(), 3));} //если уровень физической активности не удовлетворительный то уменьшить максимально допустимую активность до 3, даже если ранее выставлено больше
 
         //размер
         if (minterface.isage() < 2 || minterface.isage() ==5 || finalyactive() < 2) {inact.size.setValue(min(inact.size.getValue(), 3));} //если возраст менее 16 или активность менее нормальной (для старшего возраста менее хорошей), то максимальный размер не более 3
         if (minterface.iscynologist() < 3 || minterface.isexp() < 2) {inact.size.setValue(min(inact.size.getValue(), 3));} //если нет кинолога или опыта то размер не более 3
         if (minterface.iscynologist() > 2 || minterface.isexp() >1) {inact.size.setValue(min(inact.size.getValue(), max(minterface.istime()+2, minterface.iswalk()+1)));} //если есть опыт или кинолог то прямая зависимость от времени
-        if (minterface.iswalk() ==5 && minterface.isexp() >1) {inact.size.setValue(max(inact.size.getValue(), minterface.isexp()+2));} //если есть собственный участок и обыт не "нет", то размер = опыт +2
+        if (minterface.iswalk() >3 && minterface.isexp() >1) {inact.size.setValue(max(inact.size.getValue(), minterface.isexp()+2));} //если есть собственный участок и опыт не "нет", то размер = опыт +2
         if (minterface.isexp()<4) {inact.size.setValue(min(inact.size.getValue(), minterface.iswalk()+2));} //если нет места для выгула то размер уменьшается кроме экспертных пользователей
 
         //уход
@@ -68,8 +71,17 @@ public class Presenter_aboutdog {
             inact.obidience.setValue(max(inact.obidience.getValue(), 3)); //послушание не менее 4
             inact.agressive.setValue(min(inact.agressive.getValue(), 3)); //агрессия не более 3
         }
-        if (minterface.ishavepetboxchecked()){} //todo compleet
+        if (minterface.ishavepetboxchecked() && minterface.isexp()<2 && minterface.iswalk()<3){
+            inact.obidience.setValue(min(inact.obidience.getValue(), 3)); //если есть домашние питомцы и нет опыта и выгул ограничен то послушание не менее 3 и активность не более 3 (исключаем многих терьеров и охотничих)
+            inact.active.setValue(min(inact.active.getValue(), 3));
+        }
 
+        //корректируем показатели от размера
+        if (inact.size.getValue()<3) {
+            inact.obidience.setValue(0);
+            inact.agressive.setValue(5);
+            inact.care.setValue(max(inact.care.getValue(), 3));
+        }
     }
 
     //корректируем показатель активности от возраста или от менее активных членов семьи
