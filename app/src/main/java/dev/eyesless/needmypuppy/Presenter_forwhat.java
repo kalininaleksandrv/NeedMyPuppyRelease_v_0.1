@@ -47,17 +47,15 @@ class Presenter_forwhat {
 
 
     public void countTheBreeds() {
-
-
         getnewlist();
-
         minterface.setnumberofbreeds(gettotal(), getnumbers());
-
     }
 
 
 
     private void getnewlist() {
+
+        novaListOfBreed.clear();
 
         Iterator<Breed_mod> myBreedIterator = myListOfBreed.iterator();
 
@@ -120,16 +118,44 @@ class Presenter_forwhat {
     private Integer[] getnumbers() {
 
         int child = 0;
+        int company = 0;
+        int running = 0;
+        int hunt = 0;
+        int obidience = 0;
+        int guard = 0;
+        int zks = 0;
+        int agility = 0;
 
-        Integer[] count = new Integer[]{child};
+        Integer[] count = new Integer[]{child, company, running, hunt, obidience, guard, zks, agility};
 
-        Iterator<Breed_mod> myBreedIterator = novaListOfBreed.iterator();
+        Iterator<Breed_mod> myBreedIterator = myListOfBreed.iterator();
 
         while (myBreedIterator.hasNext()) {
             Breed_mod breed = myBreedIterator.next();
-                if (breed.getFor_child()==1){
-                    count[0] ++;
-                }
+                 if (breed.getFor_child()==1){
+                     count[0] ++;
+                 }
+                 if (breed.getFor_company()==1){
+                       count[1] ++;
+                  }
+                 if (breed.getFor_running()==1){
+                      count[2] ++;
+                  }
+                 if (breed.getFor_hunt()==1){
+                       count[3] ++;
+                   }
+                 if (breed.getFor_obidience()==1){
+                     count[4] ++;
+                 }
+                 if (breed.getFor_guardterritory()==1){
+                     count[5] ++;
+                 }
+                 if (breed.getFor_zks()==1){
+                      count[6] ++;
+                 }
+                 if (breed.getFor_agility()==1){
+                     count[7] ++;
+                 }
         }
 
         return count;

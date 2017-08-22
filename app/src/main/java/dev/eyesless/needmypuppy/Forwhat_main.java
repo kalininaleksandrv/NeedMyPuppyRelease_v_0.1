@@ -2,10 +2,12 @@ package dev.eyesless.needmypuppy;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -88,6 +90,15 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
         agilitycheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt8);
         compleetbutton_forwhat = (ImageButton)parentview.findViewById(R.id.button_complete_forwhat);
 
+        addcheckboxlistner (babycheck);
+        addcheckboxlistner (frendcheck);
+        addcheckboxlistner (runcheck);
+        addcheckboxlistner (huntcheck);
+        addcheckboxlistner (obidencecheck);
+        addcheckboxlistner (guardcheck);
+        addcheckboxlistner (zkscheck);
+        addcheckboxlistner (agilitycheck);
+
 
         if (inact.isButtonforwhatispressed()) {
 
@@ -102,6 +113,23 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
             zkscheck.setEnabled(false);
             agilitycheck.setEnabled(false);
         }
+    }
+
+    private void addcheckboxlistner(CheckBox checkbox) {
+
+        checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked){
+                    presenter.countTheBreeds();
+
+                }
+                if (!isChecked){
+                    presenter.countTheBreeds();
+                }
+            }
+        });
     }
 
     @Override
