@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import static java.lang.Math.min;
 
@@ -28,6 +30,8 @@ public class Fragment_morpho extends Buttons_Abstract_Fragment implements MVPInt
     private int blackorwhiteposition;
     private int hairposition;
     private int sizeposition;
+    private TextView numberofbreeds;
+
 
     public static final String SPINNER_HAIR = "spinnerhair";
     public static final String SPINNER_BOW = "spinnerbow";
@@ -72,9 +76,12 @@ public class Fragment_morpho extends Buttons_Abstract_Fragment implements MVPInt
         presenterinactsetter(inact);
         completebutton.setOnClickListener(myOnClickListner);
 
+        presenter.countTheBreeds();
+
     }
 
     private void restorespinnersvalue() {
+
 
         spinnerhair.setSelection(savedState.getInt(SPINNER_HAIR));
         spinnerblackorwhite.setSelection(savedState.getInt(SPINNER_BOW));
@@ -93,12 +100,16 @@ public class Fragment_morpho extends Buttons_Abstract_Fragment implements MVPInt
 
     private void spinnerinit() {
 
+        numberofbreeds = (TextView) parentview.findViewById(R.id.textView_numberOfBreeds_morpho);
         spinnerhair = (Spinner) parentview.findViewById(R.id.spinner_hair);
         spinnerblackorwhite = (Spinner) parentview.findViewById(R.id.spinner_blackorwhite);
         spinnersize = (Spinner) parentview.findViewById(R.id.spinner_size);
 
         noalergy = (CheckBox) parentview.findViewById(R.id.checkBox_noalergy);
         addrare = (CheckBox) parentview.findViewById(R.id.checkBox_addrare);
+
+        addcheckboxlistner (noalergy);
+        addcheckboxlistner (addrare);
 
     }
 
@@ -121,16 +132,21 @@ public class Fragment_morpho extends Buttons_Abstract_Fragment implements MVPInt
 
                     case (R.id.spinner_blackorwhite):
                         blackorwhiteposition = position;
+                        presenter.countTheBreeds();
+
                         break;
 
                     case (R.id.spinner_hair):
                         hairposition = position;
+                        presenter.countTheBreeds();
+
                         break;
 
                     case (R.id.spinner_size):
 
-                        if (position == 0 || position == 5 ) sizeposition = 5;
-                        else sizeposition = position;
+                        sizeposition = position;
+                        presenter.countTheBreeds();
+
                         break;
 
                 }
@@ -169,6 +185,23 @@ public class Fragment_morpho extends Buttons_Abstract_Fragment implements MVPInt
         }
     };
 
+    private void addcheckboxlistner(CheckBox checkbox) {
+
+        checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked){
+                    presenter.countTheBreeds();
+
+                }
+                if (!isChecked){
+                    presenter.countTheBreeds();
+                }
+            }
+        });
+    }
+
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
 
@@ -196,6 +229,12 @@ public class Fragment_morpho extends Buttons_Abstract_Fragment implements MVPInt
     @Override
     public int issize() {
         return sizeposition;
+    }
+
+    @Override
+    public void setnumberofbreeds(int breeds, int getchoosed) {
+        numberofbreeds.setText("ИТОГО ВЫБРАНО: " + String.valueOf(getchoosed) + " ИЗ "+ String.valueOf(breeds));
+
     }
 
     @Override

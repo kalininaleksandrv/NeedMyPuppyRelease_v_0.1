@@ -214,9 +214,6 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
     public void buttonClicked(View v) {
 
         switch (v.getId()){
-            case R.id.button_complete:
-                frameRemoover(new Buttons_main(), "ButtonsMain");
-                break;
 
             case R.id.button_complete_aboutdog:
                 databaseinitiator();
@@ -233,11 +230,23 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
 
                 if (inact.getMyListOfBreed_m().size() != 0){
 
-                    frameRemoover(new Buttons_main(), "ButtonsMain");}
+                    frameRemoover(new Fragment_morpho(), "Morpho");}
 
                 else toastmaker(getString(R.string.no_breed_found));
 
                 break;
+
+            //in morpho fragment
+            case R.id.button_complete:
+
+                if (inact.getMyListOfBreed_m().size() != 0){
+
+                    frameRemoover(new Recycle_view_fragment(), "RecycleView");}
+
+                else toastmaker(getString(R.string.no_breed_found));
+
+                break;
+
 
             case R.id.imageButton_aboutowner:
                 //check if button already been pressed, cant pressed next time
@@ -314,9 +323,7 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
     //main method for remoove frames when clicked
     public void frameRemoover (Fragment fragment, String mytag){
 
-        if (mytag == "ButtonsMain"){
         initFrameVision ();
-        }
 
         android.support.v4.app.FragmentTransaction fratramain = getSupportFragmentManager().beginTransaction();
         fratramain.replace(R.id.replaced_main, fragment, mytag);

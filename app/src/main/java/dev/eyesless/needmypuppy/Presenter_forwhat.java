@@ -163,7 +163,6 @@ class Presenter_forwhat {
             destinationlist.add(breed);
         }
 
-        Log.e ("MY_TAG", String.valueOf(destinationlist.size()));
         return destinationlist;
     }
 }

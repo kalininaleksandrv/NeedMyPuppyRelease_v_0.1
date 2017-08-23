@@ -15,4 +15,7 @@ interface MVPInterface {
     int ishair();
 
     int issize ();
+
+    void setnumberofbreeds(int breeds, int getchoosed);
+
 }
