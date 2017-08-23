@@ -6,6 +6,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;
@@ -23,35 +25,30 @@ class Presenter_forwhat {
 
     private ArrayList<Breed_mod> myListOfBreed;
 
-    private ArrayList<Breed_mod> novaListOfBreed;
+    private LinkedHashSet<Breed_mod> novaListOfBreed;
 
     public Presenter_forwhat(MVPInterface_forwhat minterface) {
 
         this.minterface = minterface;
-        this.novaListOfBreed = new ArrayList<>();
+        this.novaListOfBreed = new LinkedHashSet<>();
     }
 
     public void inactsetter(InitiationActivity inact) {
-
         this.inact = inact;
         myListOfBreed = inact.getMyListOfBreed_m();
-
     }
 
 
     public void valuereader() {
-
         inact.setButtonforwhatispressed(true);
-
+        inact.setMyListOfBreed_m(converttoarraylist(novaListOfBreed));
     }
 
 
     public void countTheBreeds() {
         getnewlist();
-        minterface.setnumberofbreeds(gettotal(), getnumbers());
+        minterface.setnumberofbreeds(gettotal(), getchoosed(), getnumbers());
     }
-
-
 
     private void getnewlist() {
 
@@ -101,19 +98,13 @@ class Presenter_forwhat {
                     novaListOfBreed.add(breed);
                 }
             }
-
-        }
-
-    }
-
-    private int gettotal() {
-
-        if (novaListOfBreed.size() != 0){
-            return novaListOfBreed.size();
-        } else {
-            return myListOfBreed.size();
         }
     }
+
+    private int gettotal() { return myListOfBreed.size();}
+
+    private int getchoosed() {return novaListOfBreed.size();}
+
 
     private Integer[] getnumbers() {
 
@@ -159,5 +150,20 @@ class Presenter_forwhat {
         }
 
         return count;
+    }
+
+    private ArrayList<Breed_mod> converttoarraylist(LinkedHashSet<Breed_mod> novaListOfBreed) {
+
+        Iterator<Breed_mod> myBreedIterator = novaListOfBreed.iterator();
+
+        ArrayList<Breed_mod> destinationlist = new ArrayList<>();
+
+        while (myBreedIterator.hasNext()) {
+            Breed_mod breed = myBreedIterator.next();
+            destinationlist.add(breed);
+        }
+
+        Log.e ("MY_TAG", String.valueOf(destinationlist.size()));
+        return destinationlist;
     }
 }

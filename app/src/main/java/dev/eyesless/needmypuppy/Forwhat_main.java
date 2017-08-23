@@ -2,7 +2,6 @@ package dev.eyesless.needmypuppy;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +25,13 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
     private ImageButton compleetbutton_forwhat;
     private TextView numberofbreeds;
     private TextView number_forchild;
-
-
-    private final String FOUND = "найдено: ";
+    private TextView number_forfrend;
+    private TextView number_forrun;
+    private TextView number_forhunt;
+    private TextView number_forobidience;
+    private TextView number_forguard;
+    private TextView number_forzks;
+    private TextView number_foragility;
 
     Presenter_forwhat presenter;
 
@@ -69,7 +72,9 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
     View.OnClickListener myOnClickListner = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-                valuereader();
+            valuereader();
+            myButtonListner.buttonClicked(v);
+
         }
     };
 
@@ -80,6 +85,13 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
 
         numberofbreeds = (TextView) parentview.findViewById(R.id.textView_numberOfBreeds);
         number_forchild = (TextView) parentview.findViewById(R.id.number_for_child);
+        number_forfrend = (TextView) parentview.findViewById(R.id.number_for_company);
+        number_forrun = (TextView) parentview.findViewById(R.id.number_for_running);
+        number_forhunt = (TextView) parentview.findViewById(R.id.number_for_hunt);
+        number_forobidience = (TextView) parentview.findViewById(R.id.number_for_obidience);
+        number_forguard = (TextView) parentview.findViewById(R.id.number_for_guard);
+        number_forzks = (TextView) parentview.findViewById(R.id.number_for_zks);
+        number_foragility = (TextView) parentview.findViewById(R.id.number_for_agility);
         babycheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt1);
         frendcheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt2);
         runcheck = (CheckBox) parentview.findViewById(R.id.checkBox_opt3);
@@ -179,9 +191,16 @@ public class Forwhat_main extends Buttons_Abstract_Fragment implements MVPInterf
         else return false;    }
 
     @Override
-    public void setnumberofbreeds(int breeds, Integer[] count) {
-        numberofbreeds.setText("ИТОГО ВЫБРАНО: " + String.valueOf(breeds));
-        number_forchild.setText(FOUND+String.valueOf(count[0]));
+    public void setnumberofbreeds(int breeds, int getchoosed, Integer[] count) {
+        numberofbreeds.setText("ИТОГО ВЫБРАНО: " + String.valueOf(getchoosed) + " ИЗ "+ String.valueOf(breeds));
+        number_forchild.setText(String.valueOf(count[0]));
+        number_forfrend.setText(String.valueOf(count[1]));
+        number_forrun.setText(String.valueOf(count[2]));
+        number_forhunt.setText(String.valueOf(count[3]));
+        number_forobidience.setText(String.valueOf(count[4]));
+        number_forguard.setText(String.valueOf(count[5]));
+        number_forzks.setText(String.valueOf(count[6]));
+        number_foragility.setText(String.valueOf(count[7]));
     }
 
     public void valuereader() {

@@ -14,6 +14,6 @@ public interface MVPInterface_forwhat {
      boolean isguardchecked ();
      boolean iszkschecked ();
      boolean isagilitychecked ();
-     void setnumberofbreeds (int breeds, Integer[] count);
+     void setnumberofbreeds(int breeds, int getchoosed, Integer[] count);
 
 }

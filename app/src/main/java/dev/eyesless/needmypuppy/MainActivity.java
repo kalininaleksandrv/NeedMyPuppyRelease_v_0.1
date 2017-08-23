@@ -229,6 +229,16 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
 
                 break;
 
+            case R.id.button_complete_forwhat:
+
+                if (inact.getMyListOfBreed_m().size() != 0){
+
+                    frameRemoover(new Buttons_main(), "ButtonsMain");}
+
+                else toastmaker(getString(R.string.no_breed_found));
+
+                break;
+
             case R.id.imageButton_aboutowner:
                 //check if button already been pressed, cant pressed next time
                 if (inact.isButtonaboutdogispressed()){toastmaker(getString(R.string.disabled_button));}
@@ -257,7 +267,7 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
 
             case R.id.button_gonext:
 
-                databaseinitiator();
+  //              databaseinitiator();
 
                 if (inact.getMyListOfBreed_m().size() != 0){
 
