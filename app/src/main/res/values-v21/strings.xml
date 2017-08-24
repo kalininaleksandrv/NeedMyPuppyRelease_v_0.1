@@ -15,10 +15,10 @@
     <string name="flag_opt6">для охраны территории</string>
     <string name="flag_opt7">для защитной службы, ЗКС</string>
     <string name="flag_opt8">для соревнований по agility</string>
-    <string name="btn_block1">О Вас...</string>
-    <string name="btn_block2">О собаке...</string>
-    <string name="btn_block3">О радостных минутах...</string>
-    <string name="btn_block4">О внешнем виде...</string>
+    <string name="btn_block1">Точный подбор (рекомендуется)</string>
+    <string name="btn_block2">По назначению (не рекомендуется)</string>
+    <string name="btn_block3">По внешнему виду (не рекомендуется)</string>
+    <string name="btn_block4">Весь лист пород</string>
     <string name="btn_opt2">Дальше</string>
     <string name="btn_complete">Готово!</string>
     <string name="resultText"></string>

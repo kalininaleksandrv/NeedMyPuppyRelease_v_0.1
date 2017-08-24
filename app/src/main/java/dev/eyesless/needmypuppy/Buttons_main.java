@@ -47,18 +47,18 @@ onButtonListner myButtonListner;
         final View parentview = getView();
 
         ImageButton aboutownerbutton = (ImageButton) parentview.findViewById(R.id.imageButton_aboutowner);
-        ImageButton forwhatbutton = (ImageButton) parentview.findViewById(R.id.imageButton_forwhat);
-        ImageButton aboutdogbutton = (ImageButton) parentview.findViewById(R.id.imageButton_aboutdog);
+        ImageButton forwhatbutton = (ImageButton) parentview.findViewById(R.id.imageButton_aboutdog);
+        ImageButton justlist = (ImageButton) parentview.findViewById(R.id.imageButton_justlist);
         ImageButton morpho = (ImageButton) parentview.findViewById(R.id.imageButton_morpho);
-        Button gonextbutton = (Button) parentview.findViewById(R.id.button_gonext);
+
 
         //реализуем онкликлистнер на подключенной кнопке
 
         aboutownerbutton.setOnClickListener(myOnClickListner);
-        aboutdogbutton.setOnClickListener(myOnClickListner);
+        justlist.setOnClickListener(myOnClickListner);
         forwhatbutton.setOnClickListener(myOnClickListner);
         morpho.setOnClickListener(myOnClickListner);
-        gonextbutton.setOnClickListener(myOnClickListner);
+
 
     }
 

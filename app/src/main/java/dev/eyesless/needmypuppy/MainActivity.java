@@ -147,7 +147,6 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
         //saved current value of guidline
         float f = lp.guidePercent;
         savedInstanceState.putFloat(GUIDLINE_VALUE, f);
-        Log.w("MY_TAG", "save guideline value");
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -156,7 +155,6 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
 
         lp.guidePercent = savedInstanceState.getFloat(GUIDLINE_VALUE);
         myGuideline.setLayoutParams(lp);
-        Log.w("MY_TAG", "restore guideline value");
     }
 
     //set a guidline value to change screen proportions depend on content
@@ -202,6 +200,7 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
                     case R.id.action_delet:
                         //deliting all choosing parameters ant set buttons status NOT pressed
                         inact.bucketseraser();
+                        frameRemoover(new Buttons_main(), "ButtonsMain");
                         return true;
 
                     default:
@@ -217,83 +216,49 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
 
             case R.id.button_complete_aboutdog:
                 databaseinitiator();
-
                 if (inact.getMyListOfBreed_m().size() != 0){
-
                     frameRemoover(new Forwhat_main(), "ForWhat");}
-
                 else toastmaker(getString(R.string.no_breed_found));
 
                 break;
 
             case R.id.button_complete_forwhat:
-
                 if (inact.getMyListOfBreed_m().size() != 0){
-
                     frameRemoover(new Fragment_morpho(), "Morpho");}
-
                 else toastmaker(getString(R.string.no_breed_found));
-
                 break;
 
             //in morpho fragment
             case R.id.button_complete:
-
                 if (inact.getMyListOfBreed_m().size() != 0){
-
                     frameRemoover(new Recycle_view_fragment(), "RecycleView");}
-
                 else toastmaker(getString(R.string.no_breed_found));
-
                 break;
-
 
             case R.id.imageButton_aboutowner:
                 //check if button already been pressed, cant pressed next time
                 if (inact.isButtonaboutdogispressed()){toastmaker(getString(R.string.disabled_button));}
                 else
-                    frameRemoover(new About_dog_main(), "AboutDog");
-                break;
-
-            case R.id.imageButton_forwhat:
-                //check if button already been pressed, cant pressed next time
-                if (inact.isButtonforwhatispressed()){toastmaker(getString(R.string.disabled_button));}
-                else
-                frameRemoover(new Forwhat_main(), "ForWhat");
+                frameRemoover(new About_dog_main(), "AboutDog");
                 break;
 
             case R.id.imageButton_aboutdog:
                 if (inact.isButtonaboutdogispressed()){toastmaker(getString(R.string.disabled_button));}
                 else
-                frameRemoover(new About_dog_main(), "AboutDog");
+                databaseinitiatorEmpty();
+                frameRemoover(new Forwhat_main(), "ForWhat");
                 break;
 
             case R.id.imageButton_morpho:
                 if (inact.isButtonmorphoispressed()){toastmaker(getString(R.string.disabled_button));}
                 else
+                databaseinitiatorEmpty();
                 frameRemoover(new Fragment_morpho(), "Morpho");
                 break;
 
-            case R.id.button_gonext:
-
-  //              databaseinitiator();
-
-                if (inact.getMyListOfBreed_m().size() != 0){
-
-                frameRemoover(new Recycle_view_fragment(), "RecycleView");}
-
-                else toastmaker(getString(R.string.no_breed_found));
-
-                break;
-
-            case R.id.button_gonext_search:
-
-                if (inact.getMyListOfBreed_m().size() != 0){
-
-                    frameRemoover(new Recycle_view_fragment(), "RecycleView");}
-
-                else toastmaker(getString(R.string.no_breed_found));
-
+            case R.id.imageButton_justlist:
+                databaseinitiatorEmpty();
+                frameRemoover(new Recycle_view_fragment(), "RecycleView");
                 break;
         }
     }
@@ -491,6 +456,20 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
             myDataCreator.databasecreator();
             myDataCreator.onCreateDb(null);
             inact.setListOfTitles();
+    }
+
+    //init db and send empty asq to add all breeds in List
+    private void databaseinitiatorEmpty() {
+
+        final String [] EMPTYSEARCH = new String []{"%", "%", String.valueOf(0), String.valueOf(6),
+                String.valueOf(6), String.valueOf(6),
+                String.valueOf(0), String.valueOf(6),
+                String.valueOf(6), "%", "%", "%", "%"};
+
+        BreedDataBaseCreator myDataCreator = new BreedDataBaseCreator(this, inact);
+        myDataCreator.databasecreator();
+        myDataCreator.onCreateDb(EMPTYSEARCH);
+        inact.setListOfTitles();
     }
 
 }

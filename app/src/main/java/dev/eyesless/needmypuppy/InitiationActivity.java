@@ -159,8 +159,8 @@ public class InitiationActivity extends Application {
         buttonaboutownerispressed = false;
         buttonmorphoispressed = false;
 
-        setMyListOfBreed_m(null);
-
+        myListOfBreed_m.clear();
+        listOfTitles.clear();
     }
 
     public boolean isButtonmorphoispressed() {
@@ -243,8 +243,6 @@ public class InitiationActivity extends Application {
         this.listOfTitles = listOfBreedTitles;
 
     }
-
-
     public int countProgressStatus () {
 
         int i = 0;
