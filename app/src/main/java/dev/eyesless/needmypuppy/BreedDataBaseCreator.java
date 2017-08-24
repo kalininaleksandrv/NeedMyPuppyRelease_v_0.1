@@ -62,6 +62,7 @@ public class BreedDataBaseCreator {
 
 
         } catch (SQLiteException e) {
+            Log.w("MY_TAG", "RawCursor not working" + e);
             Toast myToast = Toast.makeText(myContext, "RawCursor not working", Toast.LENGTH_SHORT);
             myToast.setGravity(Gravity.BOTTOM, 0, 30);
             myToast.show();

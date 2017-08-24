@@ -1,10 +1,12 @@
 package dev.eyesless.needmypuppy;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
@@ -24,6 +26,7 @@ public class BreedFromAssetsDataBaseHelper extends SQLiteOpenHelper {
     private Context mycontext;
     private static final String DB_NAME = "breeds_base.db";
     private static final int DB_VERSION = 4;
+    private static final String SP_KEY_DB_VER = "db_ver";
     private final String DB_PATH = "/data/data/dev.eyesless.needmypuppy/databases/";
     public SQLiteDatabase myDataBase;
 
@@ -36,7 +39,24 @@ public class BreedFromAssetsDataBaseHelper extends SQLiteOpenHelper {
         boolean dbexist = checkdatabase();
         if (dbexist) {
             Log.w("MY_TAG", "DB exist");
-            opendatabase();
+
+            SharedPreferences prefs = PreferenceManager
+                    .getDefaultSharedPreferences(mycontext);
+            int dbVersion = prefs.getInt(SP_KEY_DB_VER, 1);
+
+            if (DB_VERSION != dbVersion) {
+                File dbFile = mycontext.getDatabasePath(DB_NAME);
+                if (!dbFile.delete()) {
+                    Log.w("MY-TAG", "unable to delete old DB");
+                }
+                else {
+                    Log.w("MY-TAG", "deleting old DB success");
+                    createdatabase();
+                }
+            } else {
+                opendatabase();
+            }
+
         } else {
             Log.w("MY_TAG", "try to create DB");
             createdatabase();
@@ -72,6 +92,8 @@ public class BreedFromAssetsDataBaseHelper extends SQLiteOpenHelper {
 
     private void copydatabase() throws IOException {
 
+        Log.w("MY_TAG", "copying database");
+
         //Open your local db as the input stream
         InputStream myinput = mycontext.getAssets().open(DB_NAME);
 
@@ -87,6 +109,12 @@ public class BreedFromAssetsDataBaseHelper extends SQLiteOpenHelper {
         while ((length = myinput.read(buffer))>0) {
             myoutput.write(buffer,0,length);
         }
+
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(mycontext);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt(SP_KEY_DB_VER, DB_VERSION);
+        editor.commit();
 
         //Close the streams
         myoutput.flush();
@@ -118,6 +146,7 @@ public class BreedFromAssetsDataBaseHelper extends SQLiteOpenHelper {
 
         if (newVersion > oldVersion)
             try {
+                Log.w("MY_TAG", "upgradeing database");
                 copydatabase();
             } catch (IOException e) {
                 e.printStackTrace();
