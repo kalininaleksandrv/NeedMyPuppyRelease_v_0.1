@@ -7,7 +7,7 @@
     <color name="buttonNormal">#f8ba9e</color>
     <color name="backGround">#ffffff</color>
     <color name="linc">#3d5afe</color>
-
+    <color name="progressbar">#4caf50</color>
 
 
 </resources>

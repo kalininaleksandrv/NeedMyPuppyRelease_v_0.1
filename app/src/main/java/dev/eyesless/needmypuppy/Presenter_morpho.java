@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
-import static java.lang.Math.min;
-
 /**
  * Created by Eyesless on 27.06.2017.
  */
@@ -34,12 +32,6 @@ public class Presenter_morpho {
         inact.setButtonmorphoispressed(true);
         inact.setMyListOfBreed_m(converttoarraylist(novaListOfBreed));
     }
-
-//        if (minterface.isboxchecked()){inact.noalergy.setValue(1);}
-//        if (minterface.israreboxchecked()){inact.rare.setValue(1);}
-//        inact.blackorwhite.setValue(minterface.isblackorwhite());
-//        inact.hair.setValue(minterface.ishair());
-//        inact.size.setValue(min(inact.size.getValue(), minterface.issize()));
 
     public void countTheBreeds() {
         getnewlist();

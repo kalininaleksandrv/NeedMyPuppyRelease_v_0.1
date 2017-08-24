@@ -249,9 +249,8 @@ public class InitiationActivity extends Application {
 
         if (buttonforwhatispressed) i++;
         if (buttonaboutdogispressed) i++;
-        if (buttonmorphoispressed) i++;
 
-        return i*33;
+        return i*50;
     }
 
 }

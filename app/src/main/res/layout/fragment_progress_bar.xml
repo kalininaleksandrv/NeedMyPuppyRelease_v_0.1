@@ -19,7 +19,7 @@
 
                 custom:progress_reached_bar_height="55dp"
 
-                custom:progress_reached_color="@color/colorPrimaryDark"
+                custom:progress_reached_color="@color/progressbar"
                 custom:progress_text_color="@color/colorPrimaryDark"
                 custom:progress_text_offset="2dp"
                 custom:progress_text_size="30sp"

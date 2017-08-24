@@ -1,5 +1,6 @@
 package dev.eyesless.needmypuppy;
 
+import android.support.v4.app.Fragment;
 import android.view.View;
 
 /**
@@ -9,5 +10,4 @@ import android.view.View;
 public interface ItemClickListner {
 
     void onClick (View view, int position);
-
 }

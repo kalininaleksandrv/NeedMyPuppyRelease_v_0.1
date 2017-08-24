@@ -8,4 +8,5 @@
     <color name="backGround">#ffffff</color>
     <color name="primary_material_dark">#212121</color>
     <color name="linc">#3d5afe</color>
+    <color name="progressbar">#4caf50</color>
 </resources>

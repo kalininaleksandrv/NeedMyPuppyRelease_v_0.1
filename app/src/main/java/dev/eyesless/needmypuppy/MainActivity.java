@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
@@ -230,8 +231,11 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
 
             //in morpho fragment
             case R.id.button_complete:
-                if (inact.getMyListOfBreed_m().size() != 0){
-                    frameRemoover(new Recycle_view_fragment(), "RecycleView");}
+                if (inact.getMyListOfBreed_m().size() != 0)
+                {
+                    toastmaker(getString(R.string.tostartagain));
+                    frameRemoover(new Recycle_view_fragment(), "RecycleView");
+                }
                 else toastmaker(getString(R.string.no_breed_found));
                 break;
 
@@ -258,6 +262,7 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
 
             case R.id.imageButton_justlist:
                 databaseinitiatorEmpty();
+                toastmaker(getString(R.string.tostartagain));
                 frameRemoover(new Recycle_view_fragment(), "RecycleView");
                 break;
         }
@@ -300,7 +305,7 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
 
     //method for create Frame Vision (up frame in main screen)
 
-    private void initFrameVision() {
+    public void initFrameVision() {
 
         android.support.v4.app.FragmentTransaction fratramain = getSupportFragmentManager().beginTransaction();
         fratramain.replace(R.id.frame_vision, new ProgressBarFragment());

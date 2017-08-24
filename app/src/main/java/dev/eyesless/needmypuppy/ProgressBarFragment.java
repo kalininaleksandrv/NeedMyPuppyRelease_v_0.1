@@ -1,6 +1,7 @@
 package dev.eyesless.needmypuppy;
 
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -77,7 +78,7 @@ public class ProgressBarFragment extends Buttons_Abstract_Fragment implements On
     private void runStatusBar(final int count) {
 
         bnp = (NumberProgressBar)parentview.findViewById(R.id.numberProgressBar);
-        bnp.setProgress(count-33);
+        bnp.setProgress(count-50);
         bnp.setOnProgressBarListener(this);
         timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -104,7 +105,7 @@ public class ProgressBarFragment extends Buttons_Abstract_Fragment implements On
     public void onProgressChange(int current, int max) {
 
         if(current == max) {
-            progresstext.setText("Достигнута максимальная точность, нажмите кнопку ГОТОВО");
+            progresstext.setText("Осталось перейти на следующий экран и выбрать желаемые внешние признаки");
         }
 
     }
