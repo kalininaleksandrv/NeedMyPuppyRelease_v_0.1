@@ -265,6 +265,16 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
                 toastmaker(getString(R.string.tostartagain));
                 frameRemoover(new Recycle_view_fragment(), "RecycleView");
                 break;
+
+            case R.id.button_gonext_search:
+
+                if (inact.getMyListOfBreed_m().size() != 0){
+
+                    frameRemoover(new Recycle_view_fragment(), "RecycleView");}
+
+                else toastmaker(getString(R.string.no_breed_found));
+
+                break;
         }
     }
 
