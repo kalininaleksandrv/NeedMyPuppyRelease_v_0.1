@@ -71,6 +71,12 @@ public class Presenter_morpho {
                 }
             }
 
+            if (minterface.ishair() == 3){
+                if (!breed.getB_hair().equals("wire")){
+                    novaListOfBreed.remove(breed);
+                }
+            }
+
             if (minterface.isblackorwhite() == 1 ){
                 if (!breed.getB_blackorwhite().equals("white") && !breed.getB_blackorwhite().equals("white black")){
                     novaListOfBreed.remove(breed);
