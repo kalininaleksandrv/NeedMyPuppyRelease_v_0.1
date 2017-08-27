@@ -39,7 +39,7 @@ public class BreedDataBaseCreator {
 
         mysecondbreeddatabase = newbreeddatabasehelper.getWritableDatabase();
 
-        Log.i("MY_TAG", "DATABASE EXIST");
+        Log.w("MY_TAG", "DATABASE EXIST");
 
     }
 
@@ -58,7 +58,7 @@ public class BreedDataBaseCreator {
 
             mysecondbreeddatabase.close();
 
-            Log.i("MY_TAG", "DATA SEND TO LIST");
+            Log.w("MY_TAG", "DATA SEND TO LIST");
 
 
         } catch (SQLiteException e) {
@@ -131,7 +131,7 @@ public class BreedDataBaseCreator {
                 and + noalergy + like
                 , selectionArgs);
 
-        Log.i("MY_TAG", "CURSOR EXIST ");
+        Log.w("MY_TAG", "CURSOR EXIST " + mCursor.getCount());
 
         return mCursor;
     }
@@ -154,6 +154,10 @@ public class BreedDataBaseCreator {
         String noalergy_n = getNoalergy();
         String rare = "%";
 
+        Log.w("MY_TAG", "getting raw asq "+title+rare+String.valueOf(obidience_n)+String.valueOf(guard_n)+
+                String.valueOf(agressive_n)+ String.valueOf(active_n)+
+                String.valueOf(hardy_n)+ String.valueOf(size_n)+
+                String.valueOf(care_n)+ hunt_n+ hair_n+ blackorwhite_n+ noalergy_n);
 
         return new String [] {title, rare, String.valueOf(obidience_n), String.valueOf(guard_n),
                 String.valueOf(agressive_n), String.valueOf(active_n),
@@ -218,7 +222,7 @@ public class BreedDataBaseCreator {
 
          cursor.close();
 
-        Log.i("MY_TAG", "LIST EXIST " + myListOfBreed_m.size());
+        Log.w("MY_TAG", "LIST EXIST " + myListOfBreed_m.size());
 
     }
 

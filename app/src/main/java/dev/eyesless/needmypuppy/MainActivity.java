@@ -490,5 +490,3 @@ public class MainActivity extends AppCompatActivity implements onButtonListner, 
     }
 
 }
-
-// TODO: 17.08.2017 использовать двухуровневый подбор как при машинном обучении, групируя параметры в т.ч. в пересекающиеся группы

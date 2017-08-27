@@ -136,14 +136,13 @@ public class InitiationActivity extends Application {
     //true if already answering question in one of fragment
 
     private boolean buttonforwhatispressed;
-    private boolean buttonaboutownerispressed;
     private boolean buttonaboutdogispressed;
     private boolean buttonmorphoispressed;
 
     public void bucketseraser () {
 
         obidience.setValue(0);
-        guard.setValue(0);
+        guard.setValue(5);
         agressive.setValue(5);
         active.setValue(5);
         hardy.setValue(0);
@@ -156,7 +155,6 @@ public class InitiationActivity extends Application {
         rare.setValue(0);
         buttonforwhatispressed = false;
         buttonaboutdogispressed = false;
-        buttonaboutownerispressed = false;
         buttonmorphoispressed = false;
 
         myListOfBreed_m.clear();
@@ -177,12 +175,6 @@ public class InitiationActivity extends Application {
 
     public boolean isButtonforwhatispressed() {return buttonforwhatispressed;}
 
-    public void setButtonaboutownerispressed(boolean buttonforwhatispressed) {
-        this.buttonaboutownerispressed = buttonforwhatispressed;
-    }
-
-    public boolean isButtonaboutownerispressed() {return buttonaboutownerispressed;}
-
     public boolean isButtonaboutdogispressed() {return buttonaboutdogispressed;}
 
     public void setButtonaboutdogispressed(boolean buttonaboutdogispressed) {
@@ -192,8 +184,6 @@ public class InitiationActivity extends Application {
     //work with db
 
     private boolean isDataBaseCreated = false;
-
-    public boolean isDataBaseCreated() { return isDataBaseCreated; }
 
     public void setDataBaseCreated(boolean dataBaseCreated) {
         isDataBaseCreated = dataBaseCreated;
