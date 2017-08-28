@@ -14,8 +14,8 @@
     <TextView
         android:id="@+id/textView_top"
         android:layout_width="0dp"
-        app:layout_constraintWidth_default="wrap"
-        android:layout_height="0dp"
+        app:layout_constraintWidth_default="spread"
+        android:layout_height="wrap_content"
         android:text="@string/intro_about_for_what_activity"
         android:textSize="@dimen/text_size"
         android:gravity="center"
