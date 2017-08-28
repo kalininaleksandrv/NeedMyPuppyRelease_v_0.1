@@ -13,7 +13,7 @@ import android.security.keystore.KeyNotYetValidException;
 public class BreedDataBaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "breeds_base.db";
-    private static final int DB_VERSION = 4;
+    private static final int DB_VERSION = 5;
 
     public static final String TABLE_NAME = "breeds";
     public static final String KEY_ID = "_id";

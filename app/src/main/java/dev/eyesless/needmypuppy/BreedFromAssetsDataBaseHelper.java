@@ -25,7 +25,7 @@ public class BreedFromAssetsDataBaseHelper extends SQLiteOpenHelper {
 
     private Context mycontext;
     private static final String DB_NAME = "breeds_base.db";
-    private static final int DB_VERSION = 4;
+    private static final int DB_VERSION = 5;
     private static final String SP_KEY_DB_VER = "db_ver";
     private final String DB_PATH = "/data/data/dev.eyesless.needmypuppy/databases/";
     public SQLiteDatabase myDataBase;
