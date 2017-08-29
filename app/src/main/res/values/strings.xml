@@ -32,6 +32,7 @@
     <string name="flag_havepet">отметьте, если есть некрупные питомцы, птицы</string>
     <string name="flag_havechild">отметьте, если есть дети младше 6</string>
     <string name="flag_noalergy">только с гипоаллергенной шерстью</string>
+    <string name="flag_exectly">точно указанный размер</string>
     <string name="find_breed">Найти породу</string>
     <string name="mesage_to_devs">Написать разработчикам</string>
     <string name="about">Справка</string>

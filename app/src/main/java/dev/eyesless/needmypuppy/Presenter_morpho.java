@@ -94,6 +94,13 @@ public class Presenter_morpho {
                     novaListOfBreed.remove(breed);
                 }
             }
+
+            if (minterface.issize() != 0 && minterface.isexectlyboxchecked() ){
+                if (breed.getB_size()!=minterface.issize()){
+                    novaListOfBreed.remove(breed);
+                }
+            }
+
         }
     }
 

@@ -25,6 +25,7 @@ public class Fragment_morpho extends Buttons_Abstract_Fragment implements MVPInt
 
     protected CheckBox noalergy;
     protected CheckBox addrare;
+    protected CheckBox exectly;
     protected Spinner spinnerhair;
     protected Spinner spinnerblackorwhite;
     protected Spinner spinnersize;
@@ -108,9 +109,11 @@ public class Fragment_morpho extends Buttons_Abstract_Fragment implements MVPInt
 
         noalergy = (CheckBox) parentview.findViewById(R.id.checkBox_noalergy);
         addrare = (CheckBox) parentview.findViewById(R.id.checkBox_addrare);
+        exectly = (CheckBox) parentview.findViewById(R.id.checkBox_exectlysize);
 
         addcheckboxlistner (noalergy);
         addcheckboxlistner (addrare);
+        addcheckboxlistner (exectly);
 
     }
 
@@ -168,6 +171,7 @@ public class Fragment_morpho extends Buttons_Abstract_Fragment implements MVPInt
 
             noalergy.setEnabled(false);
             addrare.setEnabled(false);
+            exectly.setEnabled(false);
             spinnerhair.setEnabled(false);
             spinnerblackorwhite.setEnabled(false);
             spinnersize.setEnabled(false);
@@ -224,6 +228,12 @@ public class Fragment_morpho extends Buttons_Abstract_Fragment implements MVPInt
     @Override
     public boolean israreboxchecked() {
         if (addrare.isChecked()) return true;
+        else return false;
+    }
+
+    @Override
+    public boolean isexectlyboxchecked() {
+        if (exectly.isChecked()) return true;
         else return false;
     }
 

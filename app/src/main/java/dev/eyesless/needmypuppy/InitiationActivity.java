@@ -59,7 +59,7 @@ public class InitiationActivity extends Application {
             "только с короткой шерстью", "только с длинной шерстью", "только с жесткой шерстью"};
 
     private String [] spinner_size = {"размер собаки не более: ",
-            "очень маленькой", "маленькой", "средней", "крупной", "не имеет значения"};
+            "очень маленькой", "маленькой", "средней", "крупной", "очень крупной"};
 
     public String[] getSpinner_size() { return spinner_size; }
 

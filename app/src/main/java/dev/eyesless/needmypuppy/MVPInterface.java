@@ -6,9 +6,11 @@ package dev.eyesless.needmypuppy;
 
 interface MVPInterface {
 
-    public boolean isboxchecked ();
+    boolean isboxchecked ();
 
-    public boolean israreboxchecked ();
+    boolean israreboxchecked ();
+
+    boolean isexectlyboxchecked ();
 
     int isblackorwhite();
 
